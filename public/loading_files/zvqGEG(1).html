@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)https://cdpn.io/hoqqanen/fullembedgrid/zvqGEG?animations=run&type=embed -->
+<html lang="en"><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/extend-native-history-api.js"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/requests.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+
+
+
+  
+    <script src="./stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js.download"></script>
+
+
+  <title>Corange Loading Screen</title>
+
+    <link rel="canonical" href="https://codepen.io/hoqqanen/pen/zvqGEG">
+  
+  
+  
+  
+<style>
+#page {
+  align-items: center;
+  background: linear-gradient(to top right, #fc737a 10%, #ff7c9d 65%, #ffc01a 125%);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity 1s;
+}
+
+#phrase_box {
+  display: flex;
+  flex-flow: column;
+  height: 150px;
+  overflow: hidden;
+  width: 260px;
+}
+
+#phrases {
+  -webkit-animation: slide-phrases-upward 20s;
+          animation: slide-phrases-upward 20s;
+}
+
+#footer {
+  bottom: 30px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+}
+
+@-webkit-keyframes slide-phrases-upward {
+  0% {
+    transform: translateY(0px);
+  }
+  5% {
+    transform: translateY(-50px);
+  }
+  10% {
+    transform: translateY(-100px);
+  }
+  15% {
+    transform: translateY(-150px);
+  }
+  20% {
+    transform: translateY(-200px);
+  }
+  25% {
+    transform: translateY(-250px);
+  }
+  30% {
+    transform: translateY(-300px);
+  }
+  35% {
+    transform: translateY(-350px);
+  }
+  40% {
+    transform: translateY(-400px);
+  }
+  45% {
+    transform: translateY(-450px);
+  }
+  50% {
+    transform: translateY(-500px);
+  }
+  55% {
+    transform: translateY(-550px);
+  }
+  60% {
+    transform: translateY(-600px);
+  }
+  65% {
+    transform: translateY(-650px);
+  }
+  70% {
+    transform: translateY(-700px);
+  }
+  75% {
+    transform: translateY(-750px);
+  }
+  80% {
+    transform: translateY(-800px);
+  }
+  85% {
+    transform: translateY(-850px);
+  }
+  90% {
+    transform: translateY(-900px);
+  }
+  95% {
+    transform: translateY(-950px);
+  }
+  100% {
+    transform: translateY(-1000px);
+  }
+}
+
+@keyframes slide-phrases-upward {
+  0% {
+    transform: translateY(0px);
+  }
+  5% {
+    transform: translateY(-50px);
+  }
+  10% {
+    transform: translateY(-100px);
+  }
+  15% {
+    transform: translateY(-150px);
+  }
+  20% {
+    transform: translateY(-200px);
+  }
+  25% {
+    transform: translateY(-250px);
+  }
+  30% {
+    transform: translateY(-300px);
+  }
+  35% {
+    transform: translateY(-350px);
+  }
+  40% {
+    transform: translateY(-400px);
+  }
+  45% {
+    transform: translateY(-450px);
+  }
+  50% {
+    transform: translateY(-500px);
+  }
+  55% {
+    transform: translateY(-550px);
+  }
+  60% {
+    transform: translateY(-600px);
+  }
+  65% {
+    transform: translateY(-650px);
+  }
+  70% {
+    transform: translateY(-700px);
+  }
+  75% {
+    transform: translateY(-750px);
+  }
+  80% {
+    transform: translateY(-800px);
+  }
+  85% {
+    transform: translateY(-850px);
+  }
+  90% {
+    transform: translateY(-900px);
+  }
+  95% {
+    transform: translateY(-950px);
+  }
+  100% {
+    transform: translateY(-1000px);
+  }
+}
+#loadingCheckCircleSVG-0 {
+  -webkit-animation: fill-to-white 5000ms;
+          animation: fill-to-white 5000ms;
+  -webkit-animation-delay: -1.5s;
+          animation-delay: -1.5s;
+  fill: white;
+  opacity: 0;
+}
+
+#loadingCheckCircleSVG-1 {
+  -webkit-animation: fill-to-white 5000ms;
+          animation: fill-to-white 5000ms;
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
+  fill: white;
+  opacity: 0;
+}
+
+#loadingCheckCircleSVG-2 {
+  -webkit-animation: fill-to-white 5000ms;
+          animation: fill-to-white 5000ms;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  fill: white;
+  opacity: 0;
+}
+
+#loadingCheckCircleSVG-3 {
+  -webkit-animation: fill-to-white 5000ms;
+          animation: fill-to-white 5000ms;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+  fill: white;
+  opacity: 0;
+}
+
+#loadingCheckCircleSVG-4 {
+  -webkit-animation: fill-to-white 5000ms;
+          animation: fill-to-white 5000ms;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+  fill: white;
+  opacity: 0;
+}
+
+#loadingCheckCircleSVG-5 {
+  -webkit-animation: fill-to-white 5000ms;
+          animation: fill-to-white 5000ms;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+  fill: white;
+  opacity: 0;
+}
+
+#loadingCheckCircleSVG-6 {
+  -webkit-animation: fill-to-white 5000ms;
+          animation: fill-to-white 5000ms;
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+  fill: white;
+  opacity: 0;
+}
+
+#loadingCheckCircleSVG-7 {
+  -webkit-animation: fill-to-white 5000ms;
+          animation: fill-to-white 5000ms;
+  -webkit-animation-delay: 5.5s;
+          animation-delay: 5.5s;
+  fill: white;
+  opacity: 0;
+}
+
+#loadingCheckCircleSVG-8 {
+  -webkit-animation: fill-to-white 5000ms;
+          animation: fill-to-white 5000ms;
+  -webkit-animation-delay: 6.5s;
+          animation-delay: 6.5s;
+  fill: white;
+  opacity: 0;
+}
+
+#loadingCheckCircleSVG-9 {
+  -webkit-animation: fill-to-white 5000ms;
+          animation: fill-to-white 5000ms;
+  -webkit-animation-delay: 7.5s;
+          animation-delay: 7.5s;
+  fill: white;
+  opacity: 0;
+}
+
+#loadingCheckCircleSVG-10 {
+  -webkit-animation: fill-to-white 5000ms;
+          animation: fill-to-white 5000ms;
+  -webkit-animation-delay: 8.5s;
+          animation-delay: 8.5s;
+  fill: white;
+  opacity: 0;
+}
+
+#loadingCheckCircleSVG-11 {
+  -webkit-animation: fill-to-white 5000ms;
+          animation: fill-to-white 5000ms;
+  -webkit-animation-delay: 9.5s;
+          animation-delay: 9.5s;
+  fill: white;
+  opacity: 0;
+}
+
+#loadingCheckCircleSVG-12 {
+  -webkit-animation: fill-to-white 5000ms;
+          animation: fill-to-white 5000ms;
+  -webkit-animation-delay: 10.5s;
+          animation-delay: 10.5s;
+  fill: white;
+  opacity: 0;
+}
+
+#loadingCheckCircleSVG-13 {
+  -webkit-animation: fill-to-white 5000ms;
+          animation: fill-to-white 5000ms;
+  -webkit-animation-delay: 11.5s;
+          animation-delay: 11.5s;
+  fill: white;
+  opacity: 0;
+}
+
+#loadingCheckCircleSVG-14 {
+  -webkit-animation: fill-to-white 5000ms;
+          animation: fill-to-white 5000ms;
+  -webkit-animation-delay: 12.5s;
+          animation-delay: 12.5s;
+  fill: white;
+  opacity: 0;
+}
+
+#loadingCheckCircleSVG-15 {
+  -webkit-animation: fill-to-white 5000ms;
+          animation: fill-to-white 5000ms;
+  -webkit-animation-delay: 13.5s;
+          animation-delay: 13.5s;
+  fill: white;
+  opacity: 0;
+}
+
+#loadingCheckCircleSVG-16 {
+  -webkit-animation: fill-to-white 5000ms;
+          animation: fill-to-white 5000ms;
+  -webkit-animation-delay: 14.5s;
+          animation-delay: 14.5s;
+  fill: white;
+  opacity: 0;
+}
+
+#loadingCheckCircleSVG-17 {
+  -webkit-animation: fill-to-white 5000ms;
+          animation: fill-to-white 5000ms;
+  -webkit-animation-delay: 15.5s;
+          animation-delay: 15.5s;
+  fill: white;
+  opacity: 0;
+}
+
+#loadingCheckCircleSVG-18 {
+  -webkit-animation: fill-to-white 5000ms;
+          animation: fill-to-white 5000ms;
+  -webkit-animation-delay: 16.5s;
+          animation-delay: 16.5s;
+  fill: white;
+  opacity: 0;
+}
+
+#loadingCheckCircleSVG-19 {
+  -webkit-animation: fill-to-white 5000ms;
+          animation: fill-to-white 5000ms;
+  -webkit-animation-delay: 17.5s;
+          animation-delay: 17.5s;
+  fill: white;
+  opacity: 0;
+}
+
+#loadingCheckCircleSVG-20 {
+  -webkit-animation: fill-to-white 5000ms;
+          animation: fill-to-white 5000ms;
+  -webkit-animation-delay: 18.5s;
+          animation-delay: 18.5s;
+  fill: white;
+  opacity: 0;
+}
+
+@-webkit-keyframes fill-to-white {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fill-to-white {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#loadingCheckSVG-0 {
+  -webkit-animation: fill-to-coral 5000ms;
+          animation: fill-to-coral 5000ms;
+  -webkit-animation-delay: -1.5s;
+          animation-delay: -1.5s;
+}
+
+#loadingCheckSVG-1 {
+  -webkit-animation: fill-to-coral 5000ms;
+          animation: fill-to-coral 5000ms;
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
+}
+
+#loadingCheckSVG-2 {
+  -webkit-animation: fill-to-coral 5000ms;
+          animation: fill-to-coral 5000ms;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+#loadingCheckSVG-3 {
+  -webkit-animation: fill-to-coral 5000ms;
+          animation: fill-to-coral 5000ms;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+#loadingCheckSVG-4 {
+  -webkit-animation: fill-to-coral 5000ms;
+          animation: fill-to-coral 5000ms;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+
+#loadingCheckSVG-5 {
+  -webkit-animation: fill-to-coral 5000ms;
+          animation: fill-to-coral 5000ms;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+}
+
+#loadingCheckSVG-6 {
+  -webkit-animation: fill-to-coral 5000ms;
+          animation: fill-to-coral 5000ms;
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
+}
+
+#loadingCheckSVG-7 {
+  -webkit-animation: fill-to-coral 5000ms;
+          animation: fill-to-coral 5000ms;
+  -webkit-animation-delay: 5.5s;
+          animation-delay: 5.5s;
+}
+
+#loadingCheckSVG-8 {
+  -webkit-animation: fill-to-coral 5000ms;
+          animation: fill-to-coral 5000ms;
+  -webkit-animation-delay: 6.5s;
+          animation-delay: 6.5s;
+}
+
+#loadingCheckSVG-9 {
+  -webkit-animation: fill-to-coral 5000ms;
+          animation: fill-to-coral 5000ms;
+  -webkit-animation-delay: 7.5s;
+          animation-delay: 7.5s;
+}
+
+#loadingCheckSVG-10 {
+  -webkit-animation: fill-to-coral 5000ms;
+          animation: fill-to-coral 5000ms;
+  -webkit-animation-delay: 8.5s;
+          animation-delay: 8.5s;
+}
+
+#loadingCheckSVG-11 {
+  -webkit-animation: fill-to-coral 5000ms;
+          animation: fill-to-coral 5000ms;
+  -webkit-animation-delay: 9.5s;
+          animation-delay: 9.5s;
+}
+
+#loadingCheckSVG-12 {
+  -webkit-animation: fill-to-coral 5000ms;
+          animation: fill-to-coral 5000ms;
+  -webkit-animation-delay: 10.5s;
+          animation-delay: 10.5s;
+}
+
+#loadingCheckSVG-13 {
+  -webkit-animation: fill-to-coral 5000ms;
+          animation: fill-to-coral 5000ms;
+  -webkit-animation-delay: 11.5s;
+          animation-delay: 11.5s;
+}
+
+#loadingCheckSVG-14 {
+  -webkit-animation: fill-to-coral 5000ms;
+          animation: fill-to-coral 5000ms;
+  -webkit-animation-delay: 12.5s;
+          animation-delay: 12.5s;
+}
+
+#loadingCheckSVG-15 {
+  -webkit-animation: fill-to-coral 5000ms;
+          animation: fill-to-coral 5000ms;
+  -webkit-animation-delay: 13.5s;
+          animation-delay: 13.5s;
+}
+
+#loadingCheckSVG-16 {
+  -webkit-animation: fill-to-coral 5000ms;
+          animation: fill-to-coral 5000ms;
+  -webkit-animation-delay: 14.5s;
+          animation-delay: 14.5s;
+}
+
+#loadingCheckSVG-17 {
+  -webkit-animation: fill-to-coral 5000ms;
+          animation: fill-to-coral 5000ms;
+  -webkit-animation-delay: 15.5s;
+          animation-delay: 15.5s;
+}
+
+#loadingCheckSVG-18 {
+  -webkit-animation: fill-to-coral 5000ms;
+          animation: fill-to-coral 5000ms;
+  -webkit-animation-delay: 16.5s;
+          animation-delay: 16.5s;
+}
+
+#loadingCheckSVG-19 {
+  -webkit-animation: fill-to-coral 5000ms;
+          animation: fill-to-coral 5000ms;
+  -webkit-animation-delay: 17.5s;
+          animation-delay: 17.5s;
+}
+
+#loadingCheckSVG-20 {
+  -webkit-animation: fill-to-coral 5000ms;
+          animation: fill-to-coral 5000ms;
+  -webkit-animation-delay: 18.5s;
+          animation-delay: 18.5s;
+}
+
+@-webkit-keyframes fill-to-coral {
+  0% {
+    fill: white;
+  }
+  10% {
+    fill: #FF6D92;
+  }
+  100% {
+    fill: #FF6D92;
+  }
+}
+
+@keyframes fill-to-coral {
+  0% {
+    fill: white;
+  }
+  10% {
+    fill: #FF6D92;
+  }
+  100% {
+    fill: #FF6D92;
+  }
+}
+</style>
+
+  
+  
+  
+<script bis_use="true" type="text/javascript" charset="utf-8" data-bis-config="[&quot;facebook.com/&quot;,&quot;twitter.com/&quot;,&quot;youtube-nocookie.com/embed/&quot;,&quot;//vk.com/&quot;,&quot;//www.vk.com/&quot;,&quot;linkedin.com/&quot;,&quot;//www.linkedin.com/&quot;,&quot;//instagram.com/&quot;,&quot;//www.instagram.com/&quot;,&quot;//www.google.com/recaptcha/api2/&quot;,&quot;//hangouts.google.com/webchat/&quot;,&quot;//www.google.com/calendar/&quot;,&quot;//www.google.com/maps/embed&quot;,&quot;spotify.com/&quot;,&quot;soundcloud.com/&quot;,&quot;//player.vimeo.com/&quot;,&quot;//disqus.com/&quot;,&quot;//tgwidget.com/&quot;,&quot;//js.driftt.com/&quot;,&quot;friends2follow.com&quot;,&quot;/widget&quot;,&quot;login&quot;,&quot;//video.bigmir.net/&quot;,&quot;blogger.com&quot;,&quot;//smartlock.google.com/&quot;,&quot;//keep.google.com/&quot;,&quot;/web.tolstoycomments.com/&quot;,&quot;moz-extension://&quot;,&quot;chrome-extension://&quot;,&quot;/auth/&quot;,&quot;//analytics.google.com/&quot;,&quot;adclarity.com&quot;,&quot;paddle.com/checkout&quot;,&quot;hcaptcha.com&quot;,&quot;recaptcha.net&quot;,&quot;2captcha.com&quot;,&quot;accounts.google.com&quot;,&quot;www.google.com/shopping/customerreviews&quot;,&quot;buy.tinypass.com&quot;,&quot;gstatic.com&quot;,&quot;secureir.ebaystatic.com&quot;,&quot;docs.google.com&quot;,&quot;contacts.google.com&quot;,&quot;github.com&quot;,&quot;mail.google.com&quot;,&quot;chat.google.com&quot;,&quot;audio.xpleer.com&quot;,&quot;keepa.com&quot;,&quot;static.xx.fbcdn.net&quot;,&quot;sas.selleramp.com&quot;,&quot;1plus1.video&quot;,&quot;console.googletagservices.com&quot;,&quot;//lnkd.demdex.net/&quot;,&quot;//radar.cedexis.com/&quot;,&quot;//li.protechts.net/&quot;,&quot;challenges.cloudflare.com/&quot;,&quot;ogs.google.com&quot;]" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/traffic.js"></script></head>
+
+<body translate="no" __processed_d66ffeb9-c6e7-495c-a07c-cecd9cae8bb6__="true" bis_status="ok" bis_frame_id="83">
+  <div id="page">
+  <div id="phrase_box">
+  <svg width="100%" height="100%">
+    <defs>
+      <!--<style type="text/css">
+        @font-face {
+          font-family: "Proxima";
+          src: url('');
+        }
+      </style>-->
+      <mask id="mask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
+        <lineargradient id="linearGradient" gradientUnits="objectBoundingBox" x2="0" y2="1">
+          <stop stop-color="white" stop-opacity="0" offset="0%"></stop>
+          <stop stop-color="white" stop-opacity="1" offset="30%"></stop>
+          <stop stop-color="white" stop-opacity="1" offset="70%"></stop>
+          <stop stop-color="white" stop-opacity="0" offset="100%"></stop>
+        </lineargradient>
+        <rect width="100%" height="100%" fill="url(#linearGradient)"></rect>
+      </mask>
+    </defs>
+    <g width="100%" height="100%" style="mask: url(#mask);">
+      <g id="phrases"><text fill="white" x="50" y="30" font-size="18" font-family="Arial">Celebrating moments...</text><g transform="translate(10 10) scale(.9)"><circle id="loadingCheckCircleSVG-0" fill="rgba(255,255,255,0)" cx="16" cy="16" r="15"></circle><polygon points="21.661,7.643 13.396,19.328 9.429,15.361 7.075,17.714 13.745,24.384 24.345,9.708 " fill="rgba(255,255,255,1)" id="loadingCheckSVG-0"></polygon><path d="M16,0C7.163,0,0,7.163,0,16s7.163,16,16,16s16-7.163,16-16S24.837,0,16,0z M16,30C8.28,30,2,23.72,2,16C2,8.28,8.28,2,16,2 c7.72,0,14,6.28,14,14C30,23.72,23.72,30,16,30z" fill="white"></path></g><text fill="white" x="50" y="80" font-size="18" font-family="Arial">Grabbing tasks...</text><g transform="translate(10 60) scale(.9)"><circle id="loadingCheckCircleSVG-1" fill="rgba(255,255,255,0)" cx="16" cy="16" r="15"></circle><polygon points="21.661,7.643 13.396,19.328 9.429,15.361 7.075,17.714 13.745,24.384 24.345,9.708 " fill="rgba(255,255,255,1)" id="loadingCheckSVG-1"></polygon><path d="M16,0C7.163,0,0,7.163,0,16s7.163,16,16,16s16-7.163,16-16S24.837,0,16,0z M16,30C8.28,30,2,23.72,2,16C2,8.28,8.28,2,16,2 c7.72,0,14,6.28,14,14C30,23.72,23.72,30,16,30z" fill="white"></path></g><text fill="white" x="50" y="130" font-size="18" font-family="Arial">Collating conversations...</text><g transform="translate(10 110) scale(.9)"><circle id="loadingCheckCircleSVG-2" fill="rgba(255,255,255,0)" cx="16" cy="16" r="15"></circle><polygon points="21.661,7.643 13.396,19.328 9.429,15.361 7.075,17.714 13.745,24.384 24.345,9.708 " fill="rgba(255,255,255,1)" id="loadingCheckSVG-2"></polygon><path d="M16,0C7.163,0,0,7.163,0,16s7.163,16,16,16s16-7.163,16-16S24.837,0,16,0z M16,30C8.28,30,2,23.72,2,16C2,8.28,8.28,2,16,2 c7.72,0,14,6.28,14,14C30,23.72,23.72,30,16,30z" fill="white"></path></g><text fill="white" x="50" y="180" font-size="18" font-family="Arial">Being aspirational...</text><g transform="translate(10 160) scale(.9)"><circle id="loadingCheckCircleSVG-3" fill="rgba(255,255,255,0)" cx="16" cy="16" r="15"></circle><polygon points="21.661,7.643 13.396,19.328 9.429,15.361 7.075,17.714 13.745,24.384 24.345,9.708 " fill="rgba(255,255,255,1)" id="loadingCheckSVG-3"></polygon><path d="M16,0C7.163,0,0,7.163,0,16s7.163,16,16,16s16-7.163,16-16S24.837,0,16,0z M16,30C8.28,30,2,23.72,2,16C2,8.28,8.28,2,16,2 c7.72,0,14,6.28,14,14C30,23.72,23.72,30,16,30z" fill="white"></path></g><text fill="white" x="50" y="230" font-size="18" font-family="Arial">Simulating workflow...</text><g transform="translate(10 210) scale(.9)"><circle id="loadingCheckCircleSVG-4" fill="rgba(255,255,255,0)" cx="16" cy="16" r="15"></circle><polygon points="21.661,7.643 13.396,19.328 9.429,15.361 7.075,17.714 13.745,24.384 24.345,9.708 " fill="rgba(255,255,255,1)" id="loadingCheckSVG-4"></polygon><path d="M16,0C7.163,0,0,7.163,0,16s7.163,16,16,16s16-7.163,16-16S24.837,0,16,0z M16,30C8.28,30,2,23.72,2,16C2,8.28,8.28,2,16,2 c7.72,0,14,6.28,14,14C30,23.72,23.72,30,16,30z" fill="white"></path></g><text fill="white" x="50" y="280" font-size="18" font-family="Arial">Shuffling bits...</text><g transform="translate(10 260) scale(.9)"><circle id="loadingCheckCircleSVG-5" fill="rgba(255,255,255,0)" cx="16" cy="16" r="15"></circle><polygon points="21.661,7.643 13.396,19.328 9.429,15.361 7.075,17.714 13.745,24.384 24.345,9.708 " fill="rgba(255,255,255,1)" id="loadingCheckSVG-5"></polygon><path d="M16,0C7.163,0,0,7.163,0,16s7.163,16,16,16s16-7.163,16-16S24.837,0,16,0z M16,30C8.28,30,2,23.72,2,16C2,8.28,8.28,2,16,2 c7.72,0,14,6.28,14,14C30,23.72,23.72,30,16,30z" fill="white"></path></g><text fill="white" x="50" y="330" font-size="18" font-family="Arial">Generating phrases...</text><g transform="translate(10 310) scale(.9)"><circle id="loadingCheckCircleSVG-6" fill="rgba(255,255,255,0)" cx="16" cy="16" r="15"></circle><polygon points="21.661,7.643 13.396,19.328 9.429,15.361 7.075,17.714 13.745,24.384 24.345,9.708 " fill="rgba(255,255,255,1)" id="loadingCheckSVG-6"></polygon><path d="M16,0C7.163,0,0,7.163,0,16s7.163,16,16,16s16-7.163,16-16S24.837,0,16,0z M16,30C8.28,30,2,23.72,2,16C2,8.28,8.28,2,16,2 c7.72,0,14,6.28,14,14C30,23.72,23.72,30,16,30z" fill="white"></path></g><text fill="white" x="50" y="380" font-size="18" font-family="Arial">Considering alternatives...</text><g transform="translate(10 360) scale(.9)"><circle id="loadingCheckCircleSVG-7" fill="rgba(255,255,255,0)" cx="16" cy="16" r="15"></circle><polygon points="21.661,7.643 13.396,19.328 9.429,15.361 7.075,17.714 13.745,24.384 24.345,9.708 " fill="rgba(255,255,255,1)" id="loadingCheckSVG-7"></polygon><path d="M16,0C7.163,0,0,7.163,0,16s7.163,16,16,16s16-7.163,16-16S24.837,0,16,0z M16,30C8.28,30,2,23.72,2,16C2,8.28,8.28,2,16,2 c7.72,0,14,6.28,14,14C30,23.72,23.72,30,16,30z" fill="white"></path></g><text fill="white" x="50" y="430" font-size="18" font-family="Arial">Slacking off...</text><g transform="translate(10 410) scale(.9)"><circle id="loadingCheckCircleSVG-8" fill="rgba(255,255,255,0)" cx="16" cy="16" r="15"></circle><polygon points="21.661,7.643 13.396,19.328 9.429,15.361 7.075,17.714 13.745,24.384 24.345,9.708 " fill="rgba(255,255,255,1)" id="loadingCheckSVG-8"></polygon><path d="M16,0C7.163,0,0,7.163,0,16s7.163,16,16,16s16-7.163,16-16S24.837,0,16,0z M16,30C8.28,30,2,23.72,2,16C2,8.28,8.28,2,16,2 c7.72,0,14,6.28,14,14C30,23.72,23.72,30,16,30z" fill="white"></path></g><text fill="white" x="50" y="480" font-size="18" font-family="Arial">Doing the hokey pokey...</text><g transform="translate(10 460) scale(.9)"><circle id="loadingCheckCircleSVG-9" fill="rgba(255,255,255,0)" cx="16" cy="16" r="15"></circle><polygon points="21.661,7.643 13.396,19.328 9.429,15.361 7.075,17.714 13.745,24.384 24.345,9.708 " fill="rgba(255,255,255,1)" id="loadingCheckSVG-9"></polygon><path d="M16,0C7.163,0,0,7.163,0,16s7.163,16,16,16s16-7.163,16-16S24.837,0,16,0z M16,30C8.28,30,2,23.72,2,16C2,8.28,8.28,2,16,2 c7.72,0,14,6.28,14,14C30,23.72,23.72,30,16,30z" fill="white"></path></g><text fill="white" x="50" y="530" font-size="18" font-family="Arial">Cracking jokes...</text><g transform="translate(10 510) scale(.9)"><circle id="loadingCheckCircleSVG-10" fill="rgba(255,255,255,0)" cx="16" cy="16" r="15"></circle><polygon points="21.661,7.643 13.396,19.328 9.429,15.361 7.075,17.714 13.745,24.384 24.345,9.708 " fill="rgba(255,255,255,1)" id="loadingCheckSVG-10"></polygon><path d="M16,0C7.163,0,0,7.163,0,16s7.163,16,16,16s16-7.163,16-16S24.837,0,16,0z M16,30C8.28,30,2,23.72,2,16C2,8.28,8.28,2,16,2 c7.72,0,14,6.28,14,14C30,23.72,23.72,30,16,30z" fill="white"></path></g><text fill="white" x="50" y="580" font-size="18" font-family="Arial">Bueller...</text><g transform="translate(10 560) scale(.9)"><circle id="loadingCheckCircleSVG-11" fill="rgba(255,255,255,0)" cx="16" cy="16" r="15"></circle><polygon points="21.661,7.643 13.396,19.328 9.429,15.361 7.075,17.714 13.745,24.384 24.345,9.708 " fill="rgba(255,255,255,1)" id="loadingCheckSVG-11"></polygon><path d="M16,0C7.163,0,0,7.163,0,16s7.163,16,16,16s16-7.163,16-16S24.837,0,16,0z M16,30C8.28,30,2,23.72,2,16C2,8.28,8.28,2,16,2 c7.72,0,14,6.28,14,14C30,23.72,23.72,30,16,30z" fill="white"></path></g><text fill="white" x="50" y="630" font-size="18" font-family="Arial">Pondering emptiness...</text><g transform="translate(10 610) scale(.9)"><circle id="loadingCheckCircleSVG-12" fill="rgba(255,255,255,0)" cx="16" cy="16" r="15"></circle><polygon points="21.661,7.643 13.396,19.328 9.429,15.361 7.075,17.714 13.745,24.384 24.345,9.708 " fill="rgba(255,255,255,1)" id="loadingCheckSVG-12"></polygon><path d="M16,0C7.163,0,0,7.163,0,16s7.163,16,16,16s16-7.163,16-16S24.837,0,16,0z M16,30C8.28,30,2,23.72,2,16C2,8.28,8.28,2,16,2 c7.72,0,14,6.28,14,14C30,23.72,23.72,30,16,30z" fill="white"></path></g><text fill="white" x="50" y="680" font-size="18" font-family="Arial">Reticulating splines...</text><g transform="translate(10 660) scale(.9)"><circle id="loadingCheckCircleSVG-13" fill="rgba(255,255,255,0)" cx="16" cy="16" r="15"></circle><polygon points="21.661,7.643 13.396,19.328 9.429,15.361 7.075,17.714 13.745,24.384 24.345,9.708 " fill="rgba(255,255,255,1)" id="loadingCheckSVG-13"></polygon><path d="M16,0C7.163,0,0,7.163,0,16s7.163,16,16,16s16-7.163,16-16S24.837,0,16,0z M16,30C8.28,30,2,23.72,2,16C2,8.28,8.28,2,16,2 c7.72,0,14,6.28,14,14C30,23.72,23.72,30,16,30z" fill="white"></path></g><text fill="white" x="50" y="730" font-size="18" font-family="Arial">Feeding unicorns...</text><g transform="translate(10 710) scale(.9)"><circle id="loadingCheckCircleSVG-14" fill="rgba(255,255,255,0)" cx="16" cy="16" r="15"></circle><polygon points="21.661,7.643 13.396,19.328 9.429,15.361 7.075,17.714 13.745,24.384 24.345,9.708 " fill="rgba(255,255,255,1)" id="loadingCheckSVG-14"></polygon><path d="M16,0C7.163,0,0,7.163,0,16s7.163,16,16,16s16-7.163,16-16S24.837,0,16,0z M16,30C8.28,30,2,23.72,2,16C2,8.28,8.28,2,16,2 c7.72,0,14,6.28,14,14C30,23.72,23.72,30,16,30z" fill="white"></path></g><text fill="white" x="50" y="780" font-size="18" font-family="Arial">Empowering humanity...</text><g transform="translate(10 760) scale(.9)"><circle id="loadingCheckCircleSVG-15" fill="rgba(255,255,255,0)" cx="16" cy="16" r="15"></circle><polygon points="21.661,7.643 13.396,19.328 9.429,15.361 7.075,17.714 13.745,24.384 24.345,9.708 " fill="rgba(255,255,255,1)" id="loadingCheckSVG-15"></polygon><path d="M16,0C7.163,0,0,7.163,0,16s7.163,16,16,16s16-7.163,16-16S24.837,0,16,0z M16,30C8.28,30,2,23.72,2,16C2,8.28,8.28,2,16,2 c7.72,0,14,6.28,14,14C30,23.72,23.72,30,16,30z" fill="white"></path></g></g>
+    </g>
+  </svg>
+  </div>
+  <div id="footer">
+    <div id="logo"></div>Company
+  </div>
+</div>
+  
+    <script id="rendered-js">
+var checkmarkIdPrefix = "loadingCheckSVG-";
+var checkmarkCircleIdPrefix = "loadingCheckCircleSVG-";
+var verticalSpacing = 50;
+
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
+function createSVG(tag, properties, opt_children) {
+  var newElement = document.createElementNS("http://www.w3.org/2000/svg", tag);
+  for (prop in properties) {
+    newElement.setAttribute(prop, properties[prop]);
+  }
+  if (opt_children) {
+    opt_children.forEach(function (child) {
+      newElement.appendChild(child);
+    });
+  }
+  return newElement;
+}
+
+function createPhraseSvg(phrase, yOffset) {
+  var text = createSVG("text", {
+    fill: "white",
+    x: 50,
+    y: yOffset,
+    "font-size": 18,
+    "font-family": "Arial" });
+
+  text.appendChild(document.createTextNode(phrase + "..."));
+  return text;
+}
+function createCheckSvg(yOffset, index) {
+  var check = createSVG("polygon", {
+    points: "21.661,7.643 13.396,19.328 9.429,15.361 7.075,17.714 13.745,24.384 24.345,9.708 ",
+    fill: "rgba(255,255,255,1)",
+    id: checkmarkIdPrefix + index });
+
+  var circle_outline = createSVG("path", {
+    d: "M16,0C7.163,0,0,7.163,0,16s7.163,16,16,16s16-7.163,16-16S24.837,0,16,0z M16,30C8.28,30,2,23.72,2,16C2,8.28,8.28,2,16,2 c7.72,0,14,6.28,14,14C30,23.72,23.72,30,16,30z",
+    fill: "white" });
+
+  var circle = createSVG("circle", {
+    id: checkmarkCircleIdPrefix + index,
+    fill: "rgba(255,255,255,0)",
+    cx: 16,
+    cy: 16,
+    r: 15 });
+
+  var group = createSVG("g", {
+    transform: "translate(10 " + (yOffset - 20) + ") scale(.9)" },
+  [circle, check, circle_outline]);
+  return group;
+}
+
+function addPhrasesToDocument(phrases) {
+  phrases.forEach(function (phrase, index) {
+    var yOffset = 30 + verticalSpacing * index;
+    document.getElementById("phrases").appendChild(createPhraseSvg(phrase, yOffset));
+    document.getElementById("phrases").appendChild(createCheckSvg(yOffset, index));
+  });
+}
+
+function easeInOut(t) {
+  var period = 200;
+  return (Math.sin(t / period + 100) + 1) / 2;
+}
+
+document.addEventListener("DOMContentLoaded", function (event) {
+  var phrases = shuffleArray(["Feeding unicorns", "Grabbing tasks", "Collating conversations", "Reticulating splines", "Pondering emptiness", "Considering alternatives", "Shuffling bits", "Celebrating moments", "Generating phrases", "Simulating workflow", "Empowering humanity", "Being aspirational", "Doing the hokey pokey", "Bueller", "Cracking jokes", "Slacking off"]);
+  addPhrasesToDocument(phrases);
+  var start_time = new Date().getTime();
+  var upward_moving_group = document.getElementById("phrases");
+  upward_moving_group.currentY = 0;
+  var checks = phrases.map(function (_, i) {
+    return { check: document.getElementById(checkmarkIdPrefix + i), circle: document.getElementById(checkmarkCircleIdPrefix + i) };
+  });
+  function animateLoading() {
+    var now = new Date().getTime();
+    upward_moving_group.setAttribute("transform", "translate(0 " + upward_moving_group.currentY + ")");
+    upward_moving_group.currentY -= 1.35 * easeInOut(now);
+    checks.forEach(function (check, i) {
+      var color_change_boundary = -i * verticalSpacing + verticalSpacing + 15;
+      if (upward_moving_group.currentY < color_change_boundary) {
+        var alpha = Math.max(Math.min(1 - (upward_moving_group.currentY - color_change_boundary + 15) / 30, 1), 0);
+        check.circle.setAttribute("fill", "rgba(255, 255, 255, " + alpha + ")");
+        var check_color = [Math.round(255 * (1 - alpha) + 120 * alpha), Math.round(255 * (1 - alpha) + 154 * alpha)];
+        check.check.setAttribute("fill", "rgba(255, " + check_color[0] + "," + check_color[1] + ", 1)");
+      }
+    });
+    if (now - start_time < 30000 && upward_moving_group.currentY > -710) {
+      requestAnimationFrame(animateLoading);
+    }
+  }
+  //animateLoading();
+});
+//# sourceURL=pen.js
+  </script>
+
+  
+  <script src="./iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js.download"></script>
+
+
+
+</body></html>

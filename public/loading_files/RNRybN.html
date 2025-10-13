@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)https://cdpn.io/Ruddy/fullembedgrid/RNRybN?animations=run&type=embed -->
+<html lang="en"><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/extend-native-history-api.js"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/requests.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+
+
+
+  
+    <script src="./stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js.download"></script>
+
+
+  <title>Loader</title>
+
+    <link rel="canonical" href="https://codepen.io/Ruddy/pen/RNRybN">
+  
+  
+  <link rel="stylesheet" href="./font-awesome.min.css">
+  
+<style>
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+
+html,body {
+  margin: 0;
+  padding: 0;
+  font-family:'Lato', sans-serif;
+}
+.loader {
+  width: 100px;
+  height: 80px;
+  position: absolute;
+  top: 0; right: 0; left: 0; bottom: 0;
+  margin: auto;
+}
+.loader .image {
+  width: 100px;
+  height: 160px;
+  font-size: 40px;
+  text-align: center;
+  transform-origin: bottom center;
+  -webkit-animation: 3s rotate infinite;
+          animation: 3s rotate infinite;
+  opacity: 0;
+}
+.loader span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+}
+
+@-webkit-keyframes rotate{
+  0% {
+    transform: rotate(90deg);
+  }
+  10% {
+    opacity: 0;
+  }
+  35% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  65% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+@keyframes rotate{
+  0% {
+    transform: rotate(90deg);
+  }
+  10% {
+    opacity: 0;
+  }
+  35% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  65% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+</style>
+
+  
+  
+  
+<script bis_use="true" type="text/javascript" charset="utf-8" data-bis-config="[&quot;facebook.com/&quot;,&quot;twitter.com/&quot;,&quot;youtube-nocookie.com/embed/&quot;,&quot;//vk.com/&quot;,&quot;//www.vk.com/&quot;,&quot;linkedin.com/&quot;,&quot;//www.linkedin.com/&quot;,&quot;//instagram.com/&quot;,&quot;//www.instagram.com/&quot;,&quot;//www.google.com/recaptcha/api2/&quot;,&quot;//hangouts.google.com/webchat/&quot;,&quot;//www.google.com/calendar/&quot;,&quot;//www.google.com/maps/embed&quot;,&quot;spotify.com/&quot;,&quot;soundcloud.com/&quot;,&quot;//player.vimeo.com/&quot;,&quot;//disqus.com/&quot;,&quot;//tgwidget.com/&quot;,&quot;//js.driftt.com/&quot;,&quot;friends2follow.com&quot;,&quot;/widget&quot;,&quot;login&quot;,&quot;//video.bigmir.net/&quot;,&quot;blogger.com&quot;,&quot;//smartlock.google.com/&quot;,&quot;//keep.google.com/&quot;,&quot;/web.tolstoycomments.com/&quot;,&quot;moz-extension://&quot;,&quot;chrome-extension://&quot;,&quot;/auth/&quot;,&quot;//analytics.google.com/&quot;,&quot;adclarity.com&quot;,&quot;paddle.com/checkout&quot;,&quot;hcaptcha.com&quot;,&quot;recaptcha.net&quot;,&quot;2captcha.com&quot;,&quot;accounts.google.com&quot;,&quot;www.google.com/shopping/customerreviews&quot;,&quot;buy.tinypass.com&quot;,&quot;gstatic.com&quot;,&quot;secureir.ebaystatic.com&quot;,&quot;docs.google.com&quot;,&quot;contacts.google.com&quot;,&quot;github.com&quot;,&quot;mail.google.com&quot;,&quot;chat.google.com&quot;,&quot;audio.xpleer.com&quot;,&quot;keepa.com&quot;,&quot;static.xx.fbcdn.net&quot;,&quot;sas.selleramp.com&quot;,&quot;1plus1.video&quot;,&quot;console.googletagservices.com&quot;,&quot;//lnkd.demdex.net/&quot;,&quot;//radar.cedexis.com/&quot;,&quot;//li.protechts.net/&quot;,&quot;challenges.cloudflare.com/&quot;,&quot;ogs.google.com&quot;]" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/traffic.js"></script></head>
+
+<body translate="no" __processed_d78099db-05fc-4268-bfc5-0ce1f2ae82eb__="true" bis_status="ok" bis_frame_id="76">
+  <div class="loader">
+  <div class="image"><i class="fa fa-ticket"></i></div>
+  <span>8%</span>
+</div>
+  <script src="./jquery.min.js.download"></script>
+    <script id="rendered-js">
+$(document).ready(function () {
+  var counter = 0;
+
+  // Start the changing images
+  setInterval(function () {
+    if (counter == 9) {
+      counter = 0;
+    }
+
+    changeImage(counter);
+    counter++;
+  }, 3000);
+
+  // Set the percentage off
+  loading();
+});
+
+function changeImage(counter) {
+  var images = [
+  '<i class="fa fa-fighter-jet"></i>',
+  '<i class="fa fa-gamepad"></i>',
+  '<i class="fa fa-headphones"></i>',
+  '<i class="fa fa-cubes"></i>',
+  '<i class="fa fa-paw"></i>',
+  '<i class="fa fa-rocket"></i>',
+  '<i class="fa fa-ticket"></i>',
+  '<i class="fa fa-pie-chart"></i>',
+  '<i class="fa fa-codepen"></i>'];
+
+
+  $(".loader .image").html("" + images[counter] + "");
+}
+
+function loading() {
+  var num = 0;
+
+  for (i = 0; i <= 100; i++) {
+    setTimeout(function () {
+      $('.loader span').html(num + '%');
+
+      if (num == 100) {
+        loading();
+      }
+      num++;
+    }, i * 120);
+  };
+
+}
+//# sourceURL=pen.js
+  </script>
+
+  
+  <script src="./iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js.download"></script>
+
+
+
+</body></html>

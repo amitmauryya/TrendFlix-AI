@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://codepen.io/khadkamhn/embed/ORVNMW -->
+<html lang="en"><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/extend-native-history-api.js"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/requests.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>CodePen Embed - Loading Micro Animation</title>
+
+  <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="BW4pjhYEt3GmgLNyzvRdmr9WG-rkF3OWGaI4lDdbV3QzCHjYpekIMCjI7O6z84bjDcxrWLERevMKe3k1OtZJfg">
+
+  <link rel="stylesheet" href="./embed-da56405e631807d22caf1f9488ea8bc56a3c76f26157005872456b8478127a4a.css" media="all">
+
+  <style>
+    .hide {
+      display: none !important;
+    }
+    .embed-footer,
+    .embed-nav {
+      background: #3d3d3e;
+      
+    }
+    .embed-nav .code-types a,
+    .embed-nav .result-button-list a,
+    .action-button {
+      color: #ffffff;
+      background-color: #666666;
+    }
+    .embed-nav .code-types a.active,
+    .embed-nav .result-button-list a.active,
+    .action-button.active {
+      background: #888888;
+      color: #ffffff;
+      box-shadow: inset 0px 3px #dddddd;
+    }
+    .embed-nav .logo-wrap .edit-on-codepen {
+      color: #ffffff;
+    }
+
+    .embed-nav svg {
+      stroke: #ffffff !important;
+    }
+  </style>
+
+  <link rel="stylesheet" href="./twilight-5624f2aa0a9e5ad3c27da1db150d791e788247e197af02b4cd6db6fbc40f7354.css" media="all">
+
+<script bis_use="true" type="text/javascript" charset="utf-8" data-bis-config="[&quot;facebook.com/&quot;,&quot;twitter.com/&quot;,&quot;youtube-nocookie.com/embed/&quot;,&quot;//vk.com/&quot;,&quot;//www.vk.com/&quot;,&quot;linkedin.com/&quot;,&quot;//www.linkedin.com/&quot;,&quot;//instagram.com/&quot;,&quot;//www.instagram.com/&quot;,&quot;//www.google.com/recaptcha/api2/&quot;,&quot;//hangouts.google.com/webchat/&quot;,&quot;//www.google.com/calendar/&quot;,&quot;//www.google.com/maps/embed&quot;,&quot;spotify.com/&quot;,&quot;soundcloud.com/&quot;,&quot;//player.vimeo.com/&quot;,&quot;//disqus.com/&quot;,&quot;//tgwidget.com/&quot;,&quot;//js.driftt.com/&quot;,&quot;friends2follow.com&quot;,&quot;/widget&quot;,&quot;login&quot;,&quot;//video.bigmir.net/&quot;,&quot;blogger.com&quot;,&quot;//smartlock.google.com/&quot;,&quot;//keep.google.com/&quot;,&quot;/web.tolstoycomments.com/&quot;,&quot;moz-extension://&quot;,&quot;chrome-extension://&quot;,&quot;/auth/&quot;,&quot;//analytics.google.com/&quot;,&quot;adclarity.com&quot;,&quot;paddle.com/checkout&quot;,&quot;hcaptcha.com&quot;,&quot;recaptcha.net&quot;,&quot;2captcha.com&quot;,&quot;accounts.google.com&quot;,&quot;www.google.com/shopping/customerreviews&quot;,&quot;buy.tinypass.com&quot;,&quot;gstatic.com&quot;,&quot;secureir.ebaystatic.com&quot;,&quot;docs.google.com&quot;,&quot;contacts.google.com&quot;,&quot;github.com&quot;,&quot;mail.google.com&quot;,&quot;chat.google.com&quot;,&quot;audio.xpleer.com&quot;,&quot;keepa.com&quot;,&quot;static.xx.fbcdn.net&quot;,&quot;sas.selleramp.com&quot;,&quot;1plus1.video&quot;,&quot;console.googletagservices.com&quot;,&quot;//lnkd.demdex.net/&quot;,&quot;//radar.cedexis.com/&quot;,&quot;//li.protechts.net/&quot;,&quot;challenges.cloudflare.com/&quot;,&quot;ogs.google.com&quot;]" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/traffic.js"></script></head>
+
+<body id="the-body" style="border: 1px solid #555555; --borderWidth: 1px;" class="codepen-embed-body static results-active" __processed_4488c6d0-2a97-472e-9bd8-44bbc22c676c__="true" bis_status="ok" bis_frame_id="51">
+
+  <nav class="embed-nav group" id="embed-nav">
+
+  <ul class="code-types">
+
+
+        <li class="code-type">
+          <a id="html-link" href="https://codepen.io/khadkamhn/embed/ORVNMW#html-box" role="button" aria-pressed="false">
+              HTML
+          </a>
+        </li>
+
+
+        <li class="code-type">
+          <a id="css-link" href="https://codepen.io/khadkamhn/embed/ORVNMW#css-box" role="button" aria-pressed="false">
+              CSS
+          </a>
+        </li>
+
+
+
+
+  </ul>
+
+  <ul class="result-button-list">
+    <li class="results results-type">
+      <a id="result-link" href="https://codepen.io/khadkamhn/embed/ORVNMW#result-box" class="active" aria-pressed="true" role="button">
+        Result
+      </a>
+    </li>
+    <li>
+      <a href="https://codepen.io/khadkamhn/embed/ORVNMW#resources-link" id="skip-results-iframe-link">Skip Results Iframe</a>
+    </li>
+  </ul>
+
+
+    <div class="logo-wrap" id="edit-area">
+
+        <a class="edit-on-codepen" target="_blank" rel="noopener" href="https://codepen.io/khadkamhn/pen/ORVNMW" title="Edit on CodePen">
+            <div class="large-logo">
+    <span id="edit-on-text" class="open-on">EDIT ON</span>
+    <svg id="embed-codepen-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 26" fill="none" stroke="#000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="CodePen">
+  <path d="M80 6h-9v14h9m34-14h-9v14h9m-3-7h-6m-28 0h-6m51 7V6l11 14V6M22 16.7L33 24l11-7.3V9.3L33 2 22 9.3v7.4zm22 0L33 9.3l-11 7.4m0-7.4l11 7.3 11-7.3M33 2v7.3m0 7.4V24m55-10h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14M15 8c-1.3-1.3-3-2-5-2-4 0-7 3-7 7s3 7 7 7c2 0 3.7-.8 5-2m49-5c0 4-3 7-7 7h-5V6h5c4 0 7 3 7 7z"></path>
+</svg>
+  </div>
+  <div class="box-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="20 0 26 26" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" role="img" aria-label="Edit on CodePen">
+  <path id="icon-codepen-box" d="M22 16.7L33 24l11-7.3V9.3L33 2 22 9.3v7.4zm22 0L33 9.3l-11 7.4m0-7.4l11 7.3 11-7.3M33 2v7.3m0 7.4V24"></path>
+</svg>
+  </div>
+        </a>
+
+    
+    </div>
+
+
+</nav>
+
+
+  <div id="output" data-border-style="thin" data-header="true">
+
+
+
+        <div id="html-box" class="code-wrap code-box box " role="region" aria-label="HTML">
+
+
+          <pre tabindex="0"><code data-lang="htmlmixed" id="actual-html-code" class=" cm-s-default"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"loader-wrap"</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"bottle-wrap"</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"cap"</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">i</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">i</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">i</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">i</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">i</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">i</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">i</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">i</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"bottle"</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">svg</span> <span class="cm-attribute">version</span>=<span class="cm-string">"1.1"</span> <span class="cm-attribute">xmlns</span>=<span class="cm-string">"http://www.w3.org/2000/svg"</span> <span class="cm-attribute">xmlns:xlink</span>=<span class="cm-string">"http://www.w3.org/1999/xlink"</span> <span class="cm-attribute">x</span>=<span class="cm-string">"0px"</span> <span class="cm-attribute">y</span>=<span class="cm-string">"0px"</span>
+  <span class="cm-attribute">width</span>=<span class="cm-string">"26.81px"</span> <span class="cm-attribute">height</span>=<span class="cm-string">"106.124px"</span> <span class="cm-attribute">viewBox</span>=<span class="cm-string">"0 0.5 26.81 106.124"</span> <span class="cm-attribute">enable-background</span>=<span class="cm-string">"new 0 0.5 26.81 106.124"</span> <span class="cm-attribute">xml:space</span>=<span class="cm-string">"preserve"</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">defs</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">pattern</span> <span class="cm-attribute">id</span>=<span class="cm-string">"water_fill"</span> <span class="cm-attribute">width</span>=<span class="cm-string">".25"</span> <span class="cm-attribute">height</span>=<span class="cm-string">"1.1"</span> <span class="cm-attribute">patternContentUnits</span>=<span class="cm-string">"objectBoundingBox"</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">path</span> <span class="cm-attribute">fill</span>=<span class="cm-string">"#FBCE13"</span> <span class="cm-attribute">d</span>=<span class="cm-string">"M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z"</span><span class="cm-tag cm-bracket">/&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">pattern</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">path</span> <span class="cm-attribute">id</span>=<span class="cm-string">"bottle"</span> <span class="cm-attribute">d</span>=<span class="cm-string">"M17.905,38.109V9.734c0,0,1.75-3.125,1.375-5.5s-5.875-2.232-5.875-2.232s-5.5-0.143-5.875,2.232</span>
+  <span class="cm-string">s1.375,5.5,1.375,5.5v28.375c0,0-7.405,1.311-7.405,16.03s0,40.72,0,45.47s5.515,5.515,5.515,5.515h6.39h6.39</span>
+  <span class="cm-string">c0,0,5.515-0.765,5.515-5.515s0-30.75,0-45.47S17.905,38.109,17.905,38.109z"</span><span class="cm-tag cm-bracket">/&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">mask</span> <span class="cm-attribute">id</span>=<span class="cm-string">"bottle_mask"</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">use</span> <span class="cm-attribute">x</span>=<span class="cm-string">"0"</span> <span class="cm-attribute">y</span>=<span class="cm-string">"0"</span> <span class="cm-attribute">xlink:href</span>=<span class="cm-string">"#bottle"</span> <span class="cm-attribute">opacity</span>=<span class="cm-string">"1"</span> <span class="cm-attribute">fill</span>=<span class="cm-string">"#ffffff"</span><span class="cm-tag cm-bracket">/&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">mask</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">defs</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">rect</span> <span class="cm-attribute">class</span>=<span class="cm-string">"bottle-fill"</span> <span class="cm-attribute">mask</span>=<span class="cm-string">"url(#bottle_mask)"</span> <span class="cm-attribute">fill</span>=<span class="cm-string">"url(#water_fill)"</span> <span class="cm-attribute">x</span>=<span class="cm-string">"-400"</span> <span class="cm-attribute">y</span>=<span class="cm-string">"0"</span> <span class="cm-attribute">width</span>=<span class="cm-string">"1600"</span> <span class="cm-attribute">height</span>=<span class="cm-string">"120"</span><span class="cm-tag cm-bracket">/&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">path</span> <span class="cm-attribute">id</span>=<span class="cm-string">"btl-out"</span> <span class="cm-attribute">fill</span>=<span class="cm-string">"none"</span> <span class="cm-attribute">stroke</span>=<span class="cm-string">"#FCE480"</span> <span class="cm-attribute">stroke-width</span>=<span class="cm-string">"3"</span> <span class="cm-attribute">stroke-miterlimit</span>=<span class="cm-string">"10"</span> <span class="cm-attribute">d</span>=<span class="cm-string">"M17.905,38.109V9.734</span>
+  <span class="cm-string">c0,0,1.75-3.125,1.375-5.5s-5.875-2.232-5.875-2.232s-5.5-0.143-5.875,2.232s1.375,5.5,1.375,5.5v28.375</span>
+  <span class="cm-string">c0,0-7.405,1.311-7.405,16.03s0,40.72,0,45.47s5.515,5.515,5.515,5.515h6.39h6.39c0,0,5.515-0.765,5.515-5.515s0-30.75,0-45.47</span>
+  <span class="cm-string">S17.905,38.109,17.905,38.109z"</span><span class="cm-tag cm-bracket">/&gt;</span>
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">svg</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"bottle"</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">svg</span> <span class="cm-attribute">version</span>=<span class="cm-string">"1.1"</span> <span class="cm-attribute">xmlns</span>=<span class="cm-string">"http://www.w3.org/2000/svg"</span> <span class="cm-attribute">xmlns:xlink</span>=<span class="cm-string">"http://www.w3.org/1999/xlink"</span> <span class="cm-attribute">x</span>=<span class="cm-string">"0px"</span> <span class="cm-attribute">y</span>=<span class="cm-string">"0px"</span>
+  <span class="cm-attribute">width</span>=<span class="cm-string">"32.339px"</span> <span class="cm-attribute">height</span>=<span class="cm-string">"105.586px"</span> <span class="cm-attribute">viewBox</span>=<span class="cm-string">"0 0 32.339 105.586"</span> <span class="cm-attribute">enable-background</span>=<span class="cm-string">"new 0 0 32.339 105.586"</span> <span class="cm-attribute">xml:space</span>=<span class="cm-string">"preserve"</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">defs</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">pattern</span> <span class="cm-attribute">id</span>=<span class="cm-string">"water_fill"</span> <span class="cm-attribute">width</span>=<span class="cm-string">".25"</span> <span class="cm-attribute">height</span>=<span class="cm-string">"1.1"</span> <span class="cm-attribute">patternContentUnits</span>=<span class="cm-string">"objectBoundingBox"</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">path</span> <span class="cm-attribute">fill</span>=<span class="cm-string">"#FBCE13"</span> <span class="cm-attribute">d</span>=<span class="cm-string">"M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z"</span><span class="cm-tag cm-bracket">/&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">pattern</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">path</span> <span class="cm-attribute">id</span>=<span class="cm-string">"bottle_2"</span> <span class="cm-attribute">d</span>=<span class="cm-string">"M30.836,48.086c-0.083-3.417-3.167-7.583-3.167-7.583s-3-15.5-4-19.667s-1.417-13.25-0.167-14.583</span>
+  <span class="cm-string">s0-3.083-1.667-4.083s-5.667-0.583-5.667-0.583s-4-0.417-5.667,0.583S7.584,4.92,8.834,6.253S9.667,16.67,8.667,20.836</span>
+  <span class="cm-string">s-4,19.667-4,19.667S1.584,44.67,1.5,48.086c-0.083,3.417,1.833,34.833,1.667,37.917C3,89.086,2.25,96.586,2.834,99.67</span>
+  <span class="cm-string">c0.583,3.083,5.5,4.417,5.5,4.417h7.833H24c0,0,4.917-1.333,5.5-4.417c0.583-3.083-0.167-10.583-0.333-13.667</span>
+  <span class="cm-string">C29.003,82.919,30.919,51.503,30.836,48.086z"</span><span class="cm-tag cm-bracket">/&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">mask</span> <span class="cm-attribute">id</span>=<span class="cm-string">"bottle_mask_2"</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">use</span> <span class="cm-attribute">x</span>=<span class="cm-string">"0"</span> <span class="cm-attribute">y</span>=<span class="cm-string">"0"</span> <span class="cm-attribute">xlink:href</span>=<span class="cm-string">"#bottle_2"</span> <span class="cm-attribute">opacity</span>=<span class="cm-string">"1"</span> <span class="cm-attribute">fill</span>=<span class="cm-string">"#ffffff"</span><span class="cm-tag cm-bracket">/&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">mask</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">defs</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">rect</span> <span class="cm-attribute">class</span>=<span class="cm-string">"bottle-fill"</span> <span class="cm-attribute">mask</span>=<span class="cm-string">"url(#bottle_mask_2)"</span> <span class="cm-attribute">fill</span>=<span class="cm-string">"url(#water_fill)"</span> <span class="cm-attribute">x</span>=<span class="cm-string">"-400"</span> <span class="cm-attribute">y</span>=<span class="cm-string">"0"</span> <span class="cm-attribute">width</span>=<span class="cm-string">"1600"</span> <span class="cm-attribute">height</span>=<span class="cm-string">"120"</span><span class="cm-tag cm-bracket">/&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">path</span> <span class="cm-attribute">id</span>=<span class="cm-string">"btl-out"</span> <span class="cm-attribute">fill</span>=<span class="cm-string">"none"</span> <span class="cm-attribute">stroke</span>=<span class="cm-string">"#FCE480"</span> <span class="cm-attribute">stroke-width</span>=<span class="cm-string">"3"</span> <span class="cm-attribute">stroke-miterlimit</span>=<span class="cm-string">"10"</span> <span class="cm-attribute">d</span>=<span class="cm-string">"M30.836,48.086</span>
+  <span class="cm-string">c-0.083-3.417-3.167-7.583-3.167-7.583s-3-15.5-4-19.667s-1.417-13.25-0.167-14.583c1.25-1.333,0-3.083-1.667-4.083</span>
+  <span class="cm-string">c-1.667-1-5.667-0.583-5.667-0.583s-4-0.417-5.667,0.583c-1.667,1-2.917,2.75-1.667,4.083c1.25,1.333,0.833,10.417-0.167,14.583</span>
+  <span class="cm-string">s-4,19.667-4,19.667s-3.083,4.167-3.167,7.583c-0.083,3.417,1.833,34.833,1.667,37.917c-0.167,3.083-0.917,10.583-0.333,13.667</span>
+  <span class="cm-string">c0.583,3.083,5.5,4.417,5.5,4.417h7.833h7.833c0,0,4.917-1.333,5.5-4.417c0.583-3.083-0.167-10.583-0.333-13.667</span>
+  <span class="cm-string">C29.003,82.919,30.919,51.503,30.836,48.086z"</span><span class="cm-tag cm-bracket">/&gt;</span>
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">svg</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"bottle"</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">svg</span> <span class="cm-attribute">version</span>=<span class="cm-string">"1.1"</span> <span class="cm-attribute">xmlns</span>=<span class="cm-string">"http://www.w3.org/2000/svg"</span> <span class="cm-attribute">xmlns:xlink</span>=<span class="cm-string">"http://www.w3.org/1999/xlink"</span> <span class="cm-attribute">x</span>=<span class="cm-string">"0px"</span> <span class="cm-attribute">y</span>=<span class="cm-string">"0px"</span>
+  <span class="cm-attribute">width</span>=<span class="cm-string">"31.314px"</span> <span class="cm-attribute">height</span>=<span class="cm-string">"102.629px"</span> <span class="cm-attribute">viewBox</span>=<span class="cm-string">"0 0 31.314 102.629"</span> <span class="cm-attribute">enable-background</span>=<span class="cm-string">"new 0 0 31.314 102.629"</span> <span class="cm-attribute">xml:space</span>=<span class="cm-string">"preserve"</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">defs</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">pattern</span> <span class="cm-attribute">id</span>=<span class="cm-string">"water_fill"</span> <span class="cm-attribute">width</span>=<span class="cm-string">".25"</span> <span class="cm-attribute">height</span>=<span class="cm-string">"1.1"</span> <span class="cm-attribute">patternContentUnits</span>=<span class="cm-string">"objectBoundingBox"</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">path</span> <span class="cm-attribute">fill</span>=<span class="cm-string">"#FBCE13"</span> <span class="cm-attribute">d</span>=<span class="cm-string">"M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z"</span><span class="cm-tag cm-bracket">/&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">pattern</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">path</span> <span class="cm-attribute">id</span>=<span class="cm-string">"bottle_3"</span> <span class="cm-attribute">d</span>=<span class="cm-string">"M29.157,53.497c-2-10.757-6.688-36.18-7.375-40.493s0.688-1.688,0.25-6.75s-6.375-4.75-6.375-4.75</span>
+  <span class="cm-string">S9.72,1.191,9.282,6.254s0.938,2.438,0.25,6.75S4.157,42.74,2.157,53.497s1.25,22.757,0.75,29.507s-1.917,12.333,1.333,15.5</span>
+  <span class="cm-string">c3.25,3.167,8.583,2.583,8.583,2.583h2.833h2.833c0,0,5.333,0.583,8.583-2.583c3.25-3.167,1.833-8.75,1.333-15.5</span>
+  <span class="cm-string">S31.157,64.254,29.157,53.497z"</span><span class="cm-tag cm-bracket">/&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">mask</span> <span class="cm-attribute">id</span>=<span class="cm-string">"bottle_mask_3"</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">use</span> <span class="cm-attribute">x</span>=<span class="cm-string">"0"</span> <span class="cm-attribute">y</span>=<span class="cm-string">"0"</span> <span class="cm-attribute">xlink:href</span>=<span class="cm-string">"#bottle_3"</span> <span class="cm-attribute">opacity</span>=<span class="cm-string">"1"</span> <span class="cm-attribute">fill</span>=<span class="cm-string">"#ffffff"</span><span class="cm-tag cm-bracket">/&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">mask</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">defs</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">rect</span> <span class="cm-attribute">class</span>=<span class="cm-string">"bottle-fill"</span> <span class="cm-attribute">mask</span>=<span class="cm-string">"url(#bottle_mask_3)"</span> <span class="cm-attribute">fill</span>=<span class="cm-string">"url(#water_fill)"</span> <span class="cm-attribute">x</span>=<span class="cm-string">"-400"</span> <span class="cm-attribute">y</span>=<span class="cm-string">"0"</span> <span class="cm-attribute">width</span>=<span class="cm-string">"1600"</span> <span class="cm-attribute">height</span>=<span class="cm-string">"120"</span><span class="cm-tag cm-bracket">/&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">path</span> <span class="cm-attribute">id</span>=<span class="cm-string">"btl-out"</span> <span class="cm-attribute">fill</span>=<span class="cm-string">"none"</span> <span class="cm-attribute">stroke</span>=<span class="cm-string">"#FCE480"</span> <span class="cm-attribute">stroke-width</span>=<span class="cm-string">"3"</span> <span class="cm-attribute">stroke-miterlimit</span>=<span class="cm-string">"10"</span> <span class="cm-attribute">d</span>=<span class="cm-string">"M29.157,53.497c-2-10.757-6.688-36.18-7.375-40.493</span>
+  <span class="cm-string">s0.688-1.688,0.25-6.75s-6.375-4.75-6.375-4.75S9.72,1.191,9.282,6.254s0.938,2.438,0.25,6.75S4.157,42.74,2.157,53.497</span>
+  <span class="cm-string">s1.25,22.757,0.75,29.507s-1.917,12.333,1.333,15.5c3.25,3.167,8.583,2.583,8.583,2.583h2.833h2.833c0,0,5.333,0.583,8.583-2.583</span>
+  <span class="cm-string">c3.25-3.167,1.833-8.75,1.333-15.5S31.157,64.254,29.157,53.497z"</span><span class="cm-tag cm-bracket">/&gt;</span>
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">svg</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"bottle"</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">svg</span> <span class="cm-attribute">version</span>=<span class="cm-string">"1.1"</span> <span class="cm-attribute">xmlns</span>=<span class="cm-string">"http://www.w3.org/2000/svg"</span> <span class="cm-attribute">xmlns:xlink</span>=<span class="cm-string">"http://www.w3.org/1999/xlink"</span> <span class="cm-attribute">x</span>=<span class="cm-string">"0px"</span> <span class="cm-attribute">y</span>=<span class="cm-string">"0px"</span>
+  <span class="cm-attribute">width</span>=<span class="cm-string">"27.071px"</span> <span class="cm-attribute">height</span>=<span class="cm-string">"100.378px"</span> <span class="cm-attribute">viewBox</span>=<span class="cm-string">"0 0 27.071 100.378"</span> <span class="cm-attribute">enable-background</span>=<span class="cm-string">"new 0 0 27.071 100.378"</span> <span class="cm-attribute">xml:space</span>=<span class="cm-string">"preserve"</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">defs</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">pattern</span> <span class="cm-attribute">id</span>=<span class="cm-string">"water_fill"</span> <span class="cm-attribute">width</span>=<span class="cm-string">".25"</span> <span class="cm-attribute">height</span>=<span class="cm-string">"1.1"</span> <span class="cm-attribute">patternContentUnits</span>=<span class="cm-string">"objectBoundingBox"</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">path</span> <span class="cm-attribute">fill</span>=<span class="cm-string">"#FBCE13"</span> <span class="cm-attribute">d</span>=<span class="cm-string">"M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z"</span><span class="cm-tag cm-bracket">/&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">pattern</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">path</span> <span class="cm-attribute">id</span>=<span class="cm-string">"bottle_4"</span> <span class="cm-attribute">d</span>=<span class="cm-string">"M25.474,44.253c-0.564-8.625-3.189-12-5.189-20s-2.5-16-2.5-16s0.438-3.125-0.313-4.625</span>
+  <span class="cm-string">c-0.706-1.413-2.247-2.15-3.937-2.128c-1.691-0.022-3.231,0.715-3.938,2.128c-0.75,1.5-0.313,4.625-0.313,4.625s-0.5,8-2.5,16</span>
+  <span class="cm-string">s-4.625,11.375-5.189,20c-0.564,8.625,1.564,35.25,0.626,40.625s-1.375,14,2.813,14c3.029,0,6.375,0,8,0c0,0,0.378,0,1,0</span>
+  <span class="cm-string">c1.625,0,4.971,0,8,0c4.188,0,3.75-8.625,2.813-14S26.038,52.878,25.474,44.253z"</span><span class="cm-tag cm-bracket">/&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">mask</span> <span class="cm-attribute">id</span>=<span class="cm-string">"bottle_mask_4"</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">use</span> <span class="cm-attribute">x</span>=<span class="cm-string">"0"</span> <span class="cm-attribute">y</span>=<span class="cm-string">"0"</span> <span class="cm-attribute">xlink:href</span>=<span class="cm-string">"#bottle_4"</span> <span class="cm-attribute">opacity</span>=<span class="cm-string">"1"</span> <span class="cm-attribute">fill</span>=<span class="cm-string">"#ffffff"</span><span class="cm-tag cm-bracket">/&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">mask</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">defs</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">rect</span> <span class="cm-attribute">class</span>=<span class="cm-string">"bottle-fill"</span> <span class="cm-attribute">mask</span>=<span class="cm-string">"url(#bottle_mask_4)"</span> <span class="cm-attribute">fill</span>=<span class="cm-string">"url(#water_fill)"</span> <span class="cm-attribute">x</span>=<span class="cm-string">"-400"</span> <span class="cm-attribute">y</span>=<span class="cm-string">"0"</span> <span class="cm-attribute">width</span>=<span class="cm-string">"1600"</span> <span class="cm-attribute">height</span>=<span class="cm-string">"120"</span><span class="cm-tag cm-bracket">/&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">path</span> <span class="cm-attribute">id</span>=<span class="cm-string">"btl-out"</span> <span class="cm-attribute">fill</span>=<span class="cm-string">"none"</span> <span class="cm-attribute">stroke</span>=<span class="cm-string">"#FCE480"</span> <span class="cm-attribute">stroke-width</span>=<span class="cm-string">"3"</span> <span class="cm-attribute">stroke-miterlimit</span>=<span class="cm-string">"10"</span> <span class="cm-attribute">d</span>=<span class="cm-string">"M25.474,44.253c-0.564-8.625-3.189-12-5.189-20</span>
+  <span class="cm-string">s-2.5-16-2.5-16s0.438-3.125-0.313-4.625c-0.706-1.413-2.247-2.15-3.937-2.128c-1.691-0.022-3.231,0.715-3.938,2.128</span>
+  <span class="cm-string">c-0.75,1.5-0.313,4.625-0.313,4.625s-0.5,8-2.5,16s-4.625,11.375-5.189,20c-0.564,8.625,1.564,35.25,0.626,40.625</span>
+  <span class="cm-string">s-1.375,14,2.813,14c3.029,0,6.375,0,8,0c0,0,0.378,0,1,0c1.625,0,4.971,0,8,0c4.188,0,3.75-8.625,2.813-14</span>
+  <span class="cm-string">S26.038,52.878,25.474,44.253z"</span><span class="cm-tag cm-bracket">/&gt;</span>
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">svg</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"bar"</span><span class="cm-tag cm-bracket">&gt;</span><span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">div</span> <span class="cm-attribute">class</span>=<span class="cm-string">"text"</span><span class="cm-tag cm-bracket">&gt;</span>loading<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span>
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">div</span><span class="cm-tag cm-bracket">&gt;</span></code></pre>
+
+        </div>
+
+
+
+        <div id="css-box" class="code-wrap code-box box " role="region" aria-label="CSS">
+
+
+          <pre tabindex="0"><code data-lang="css" id="actual-css-code" class=" cm-s-default"><span class="cm-tag">body</span>{
+  <span class="cm-property">margin</span>:<span class="cm-number">0</span>;
+  <span class="cm-property">color</span>:<span class="cm-atom">#444</span>;
+  <span class="cm-property">background-color</span>:<span class="cm-atom">#141414</span>;
+  <span class="cm-property">font</span>:<span class="cm-number">300</span> <span class="cm-number">18px</span>/<span class="cm-number">18px</span> <span class="cm-variable">Roboto</span>, <span class="cm-atom">sans-serif</span>;
+}
+*,:<span class="cm-variable-3">after</span>,:<span class="cm-variable-3">before</span>{<span class="cm-property">box-sizing</span>:<span class="cm-atom">border-box</span>}
+<span class="cm-qualifier">.pull-left</span>{<span class="cm-property">float</span>:<span class="cm-atom">left</span>}
+<span class="cm-qualifier">.pull-right</span>{<span class="cm-property">float</span>:<span class="cm-atom">right</span>}
+<span class="cm-qualifier">.clearfix</span>:<span class="cm-variable-3">after</span>,<span class="cm-qualifier">.clearfix</span>:<span class="cm-variable-3">before</span>{<span class="cm-property">content</span>:<span class="cm-string">''</span>;<span class="cm-property">display</span>:<span class="cm-atom">table</span>}
+<span class="cm-qualifier">.clearfix</span>:<span class="cm-variable-3">after</span>{<span class="cm-property">clear</span>:<span class="cm-atom">both</span>;<span class="cm-property">display</span>:<span class="cm-atom">block</span>}
+
+<span class="cm-qualifier">.loader-wrap</span>{
+  <span class="cm-property">top</span>:<span class="cm-number">50%</span>;
+  <span class="cm-property">left</span>:<span class="cm-number">50%</span>;
+  <span class="cm-property">width</span>:<span class="cm-number">374px</span>;
+  <span class="cm-property">height</span>:<span class="cm-number">194px</span>;
+  <span class="cm-property">position</span>:<span class="cm-atom">fixed</span>;
+  <span class="cm-property">margin-top</span>:<span class="cm-number">-97px</span>;
+  <span class="cm-property">margin-left</span>:<span class="cm-number">-187px</span>;
+}
+<span class="cm-qualifier">.bar</span>{
+  <span class="cm-property">height</span>:<span class="cm-number">5px</span>;
+  <span class="cm-property">width</span>:<span class="cm-number">100%</span>;
+  <span class="cm-property">margin</span>:<span class="cm-number">30px</span> <span class="cm-number">0</span>;
+  <span class="cm-property">position</span>:<span class="cm-atom">relative</span>;
+  <span class="cm-property">background-color</span>:<span class="cm-atom">#444</span>;
+}
+<span class="cm-qualifier">.bar</span>:<span class="cm-variable-3">before</span>{
+  <span class="cm-property">top</span>:<span class="cm-number">0</span>;
+  <span class="cm-property">left</span>:<span class="cm-number">0</span>;
+  <span class="cm-property">width</span>:<span class="cm-number">0</span>;
+  <span class="cm-property">content</span>:<span class="cm-string">''</span>;
+  <span class="cm-property">height</span>:<span class="cm-atom">inherit</span>;
+  <span class="cm-property">position</span>:<span class="cm-atom">absolute</span>;
+  <span class="cm-property">background-color</span>:<span class="cm-atom">#FBCE13</span>;
+  <span class="cm-property">animation</span>:<span class="cm-variable">bar</span> <span class="cm-number">2500ms</span> <span class="cm-atom">linear</span> <span class="cm-atom">infinite</span>;
+}
+<span class="cm-qualifier">.text</span>{
+  <span class="cm-property">color</span>:<span class="cm-atom">#FBCE13</span>;
+  <span class="cm-property">font-size</span>:<span class="cm-number">24px</span>;
+  <span class="cm-property">font-weight</span>:<span class="cm-number">500</span>;
+  <span class="cm-property">text-align</span>:<span class="cm-atom">center</span>;
+  <span class="cm-property">letter-spacing</span>:<span class="cm-number">10px</span>;
+  <span class="cm-property">text-transform</span>:<span class="cm-atom">uppercase</span>;
+}
+<span class="cm-qualifier">.cap</span>{
+  <span class="cm-property">left</span>:<span class="cm-number">0</span>;
+  <span class="cm-property">right</span>:<span class="cm-number">0</span>;
+  <span class="cm-property">top</span>:<span class="cm-number">-15px</span>;
+  <span class="cm-property">z-index</span>:<span class="cm-number">1</span>;
+  <span class="cm-property">width</span>:<span class="cm-number">100%</span>;
+  <span class="cm-property">position</span>:<span class="cm-atom">absolute</span>;
+}
+<span class="cm-qualifier">.cap</span>&gt;<span class="cm-tag">i</span>{
+  <span class="cm-property">opacity</span>:<span class="cm-number">0</span>;
+  <span class="cm-property">height</span>:<span class="cm-number">3px</span>;
+  <span class="cm-property">width</span>:<span class="cm-number">16px</span>;
+  <span class="cm-property">margin-left</span>:<span class="cm-number">12px</span>;
+  <span class="cm-property">border-radius</span>:<span class="cm-number">3px</span>;
+  <span class="cm-property">position</span>:<span class="cm-atom">absolute</span>;
+  <span class="cm-property">background-color</span>:<span class="cm-atom">#FBCE13</span>;
+  <span class="cm-property">animation</span>:<span class="cm-variable">move-cap</span> <span class="cm-number">2500ms</span> <span class="cm-atom">linear</span> <span class="cm-atom">infinite</span>;
+}
+<span class="cm-qualifier">.bottle-fill</span>{
+  <span class="cm-property">animation</span>:<span class="cm-variable">waves</span> <span class="cm-number">2500ms</span> <span class="cm-atom">infinite</span> <span class="cm-atom">linear</span>, <span class="cm-atom">fill</span> <span class="cm-number">2500ms</span> <span class="cm-atom">infinite</span> <span class="cm-atom">forwards</span>;
+}
+<span class="cm-qualifier">.bottle-wrap</span>{
+  <span class="cm-property">height</span>:<span class="cm-number">110px</span>;
+  <span class="cm-property">position</span>:<span class="cm-atom">relative</span>;
+}
+<span class="cm-qualifier">.bottle</span>{
+  <span class="cm-property">bottom</span>:<span class="cm-number">0</span>;
+  <span class="cm-property">opacity</span>:<span class="cm-number">0</span>;
+  <span class="cm-property">width</span>:<span class="cm-number">40px</span>;
+  <span class="cm-property">text-align</span>:<span class="cm-atom">center</span>;
+  <span class="cm-property">position</span>: <span class="cm-atom">absolute</span>;
+  <span class="cm-property">display</span>:<span class="cm-atom">inline-block</span>;
+  <span class="cm-property">vertical-align</span>:<span class="cm-atom">bottom</span>;
+  <span class="cm-property">transform-origin</span>:<span class="cm-atom">bottom</span> <span class="cm-atom">right</span>;
+  <span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translateX</span>(<span class="cm-number">-300px</span>);
+  <span class="cm-property">animation</span>:<span class="cm-atom">move</span> <span class="cm-number">2500ms</span> <span class="cm-atom">linear</span> <span class="cm-atom">infinite</span>;
+}
+<span class="cm-qualifier">.bottle</span>:<span class="cm-variable-3">before</span>,
+<span class="cm-qualifier">.bottle</span>:<span class="cm-variable-3">after</span>{
+  <span class="cm-property">left</span>:<span class="cm-number">50%</span>;
+  <span class="cm-property">opacity</span>:<span class="cm-number">0</span>;
+  <span class="cm-property">content</span>:<span class="cm-string">''</span>;
+  <span class="cm-property">position</span>:<span class="cm-atom">absolute</span>;
+  <span class="cm-property">background-color</span>:<span class="cm-atom">#FBCE13</span>;
+}
+<span class="cm-qualifier">.bottle</span>:<span class="cm-variable-3">before</span>{
+  <span class="cm-property">opacity</span>:<span class="cm-number">1</span>;
+  <span class="cm-property">width</span>:<span class="cm-number">4px</span>;
+  <span class="cm-property">top</span>:<span class="cm-number">-40px</span>;
+  <span class="cm-property">height</span>:<span class="cm-number">14px</span>;
+  <span class="cm-property">margin-left</span>:<span class="cm-number">-2px</span>;
+  <span class="cm-property">animation</span>:<span class="cm-variable">lock-cap</span> <span class="cm-number">2500ms</span> <span class="cm-atom">linear</span> <span class="cm-atom">infinite</span>;
+}
+<span class="cm-qualifier">.bottle</span>:<span class="cm-variable-3">after</span>{
+  <span class="cm-property">top</span>:<span class="cm-number">0</span>;
+  <span class="cm-property">height</span>:<span class="cm-number">4px</span>;
+  <span class="cm-property">width</span>:<span class="cm-number">16px</span>;
+  <span class="cm-property">margin-left</span>:<span class="cm-number">-8px</span>;
+  <span class="cm-property">border-radius</span>:<span class="cm-number">4px</span>;
+  <span class="cm-property">animation</span>:<span class="cm-variable">show-cap</span> <span class="cm-number">2500ms</span> <span class="cm-atom">linear</span> <span class="cm-atom">infinite</span>;
+}
+<span class="cm-qualifier">.cap</span>&gt;<span class="cm-tag">i</span>:<span class="cm-variable cm-callee">nth-child</span>(<span class="cm-number">2</span>),
+<span class="cm-qualifier">.bottle</span>:<span class="cm-variable cm-callee">nth-child</span>(<span class="cm-number">2</span>),
+<span class="cm-qualifier">.bottle</span>:<span class="cm-variable cm-callee">nth-child</span>(<span class="cm-number">2</span>):<span class="cm-variable-3">before</span>,
+<span class="cm-qualifier">.bottle</span>:<span class="cm-variable cm-callee">nth-child</span>(<span class="cm-number">2</span>):<span class="cm-variable-3">after</span>,
+<span class="cm-qualifier">.bottle</span>:<span class="cm-variable cm-callee">nth-child</span>(<span class="cm-number">2</span>) <span class="cm-qualifier">.bottle-fill</span>{
+  <span class="cm-property">animation-delay</span>:<span class="cm-number">625ms</span>;
+}
+<span class="cm-qualifier">.cap</span>&gt;<span class="cm-tag">i</span>:<span class="cm-variable cm-callee">nth-child</span>(<span class="cm-number">3</span>),
+<span class="cm-qualifier">.bottle</span>:<span class="cm-variable cm-callee">nth-child</span>(<span class="cm-number">3</span>),
+<span class="cm-qualifier">.bottle</span>:<span class="cm-variable cm-callee">nth-child</span>(<span class="cm-number">3</span>):<span class="cm-variable-3">before</span>,
+<span class="cm-qualifier">.bottle</span>:<span class="cm-variable cm-callee">nth-child</span>(<span class="cm-number">3</span>):<span class="cm-variable-3">after</span>,
+<span class="cm-qualifier">.bottle</span>:<span class="cm-variable cm-callee">nth-child</span>(<span class="cm-number">3</span>) <span class="cm-qualifier">.bottle-fill</span>{
+  <span class="cm-property">animation-delay</span>:<span class="cm-number">1250ms</span>;
+}
+<span class="cm-qualifier">.cap</span>&gt;<span class="cm-tag">i</span>:<span class="cm-variable cm-callee">nth-child</span>(<span class="cm-number">4</span>),
+<span class="cm-qualifier">.bottle</span>:<span class="cm-variable cm-callee">nth-child</span>(<span class="cm-number">4</span>),
+<span class="cm-qualifier">.bottle</span>:<span class="cm-variable cm-callee">nth-child</span>(<span class="cm-number">4</span>):<span class="cm-variable-3">before</span>,
+<span class="cm-qualifier">.bottle</span>:<span class="cm-variable cm-callee">nth-child</span>(<span class="cm-number">4</span>):<span class="cm-variable-3">after</span>,
+<span class="cm-qualifier">.bottle</span>:<span class="cm-variable cm-callee">nth-child</span>(<span class="cm-number">4</span>) <span class="cm-qualifier">.bottle-fill</span>{
+  <span class="cm-property">animation-delay</span>:<span class="cm-number">1875ms</span>;
+}
+<span class="cm-qualifier">.bottle</span> <span class="cm-tag">svg</span>{<span class="cm-property">vertical-align</span>:<span class="cm-atom">bottom</span>;<span class="cm-property">display</span>:<span class="cm-atom">block</span>;<span class="cm-property">margin</span>:<span class="cm-atom">auto</span>}
+
+<span class="cm-def">@keyframes</span> <span class="cm-variable">waves</span>{
+  <span class="cm-number">0%</span>{ <span class="cm-property cm-error">x</span>:<span class="cm-number">-200px</span> }
+  <span class="cm-number">25%</span>{ <span class="cm-property cm-error">x</span>:<span class="cm-number">-100px</span> }
+  <span class="cm-number">50%</span>{ <span class="cm-property cm-error">x</span>:<span class="cm-number">-200px</span> }
+  <span class="cm-number">75%</span>,
+  <span class="cm-number">100%</span>{ <span class="cm-property cm-error">x</span>:<span class="cm-number">-40px</span> }
+}
+<span class="cm-def">@keyframes</span> <span class="cm-variable">fill</span>{
+  <span class="cm-number">0%</span>{ <span class="cm-property">height</span>:<span class="cm-number">0</span>; <span class="cm-property cm-error">y</span>:<span class="cm-number">125px</span>}
+  <span class="cm-number">30%</span>,
+  <span class="cm-number">100%</span>{ <span class="cm-property">height</span>:<span class="cm-number">100px</span>; <span class="cm-property cm-error">y</span>:<span class="cm-number">25px</span>}
+}
+
+<span class="cm-def">@keyframes</span> <span class="cm-variable">move</span>{
+  <span class="cm-number">0%</span>{
+    <span class="cm-property">opacity</span>:<span class="cm-number">0</span>;
+    <span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translateX</span>(<span class="cm-number">0</span>);
+  }
+  <span class="cm-number">25%</span>{
+    <span class="cm-property">opacity</span>:<span class="cm-number">1</span>;
+    <span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translateX</span>(<span class="cm-number">75px</span>);
+  }
+  <span class="cm-number">48%</span>{<span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translateX</span>(<span class="cm-number">144px</span>) <span class="cm-variable cm-callee">translateY</span>(<span class="cm-number">0</span>);}
+  <span class="cm-number">50%</span>{
+    <span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translateX</span>(<span class="cm-number">150px</span>) <span class="cm-variable cm-callee">translateY</span>(<span class="cm-number">-10px</span>);
+  }
+  <span class="cm-number">52%</span>{<span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translateX</span>(<span class="cm-number">156px</span>) <span class="cm-variable cm-callee">translateY</span>(<span class="cm-number">0</span>);}
+  <span class="cm-number">75%</span>{
+    <span class="cm-property">opacity</span>:<span class="cm-number">1</span>;
+    <span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translateX</span>(<span class="cm-number">225px</span>);
+  }
+  <span class="cm-number">100%</span>{
+    <span class="cm-property">opacity</span>:<span class="cm-number">0</span>;
+    <span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translateX</span>(<span class="cm-number">300px</span>);
+  }
+}
+<span class="cm-def">@keyframes</span> <span class="cm-variable">move-cap</span>{
+  <span class="cm-number">0%</span>{
+    <span class="cm-property">opacity</span>:<span class="cm-number">0</span>;
+    <span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translate</span>(<span class="cm-number">0</span>,<span class="cm-number">0</span>);
+  }
+  <span class="cm-number">25%</span>{
+    <span class="cm-property">opacity</span>:<span class="cm-number">1</span>;
+    <span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translate</span>(<span class="cm-number">75px</span>,<span class="cm-number">0</span>);
+  }
+  <span class="cm-number">45%</span>{<span class="cm-property">opacity</span>:<span class="cm-number">1</span>}
+  <span class="cm-number">48%</span>{<span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translate</span>(<span class="cm-number">144px</span>, <span class="cm-number">0</span>)}
+  <span class="cm-number">50%</span>{
+    <span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translate</span>(<span class="cm-number">150px</span>,<span class="cm-number">10px</span>);
+  }
+  <span class="cm-number">52%</span>{<span class="cm-property">opacity</span>:<span class="cm-number">0</span>}
+  <span class="cm-number">75%</span>{
+    <span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translate</span>(<span class="cm-number">225px</span>,<span class="cm-number">0</span>);
+  }
+  <span class="cm-number">100%</span>{
+    <span class="cm-property">opacity</span>:<span class="cm-number">0</span>;
+    <span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translate</span>(<span class="cm-number">300px</span>,<span class="cm-number">0</span>);
+  }
+}
+<span class="cm-def">@keyframes</span> <span class="cm-variable">show-cap</span>{
+  <span class="cm-number">0%</span>,<span class="cm-number">45%</span>{<span class="cm-property">opacity</span>:<span class="cm-number">0</span>}
+  <span class="cm-number">48%</span>,<span class="cm-number">90%</span>{<span class="cm-property">opacity</span>:<span class="cm-number">1</span>}
+}
+<span class="cm-def">@keyframes</span> <span class="cm-variable">lock-cap</span>{
+  <span class="cm-number">0%</span>,<span class="cm-number">45%</span>,<span class="cm-number">48%</span>,<span class="cm-number">100%</span>{<span class="cm-property">opacity</span>:<span class="cm-number">0</span>;<span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translateY</span>(<span class="cm-number">-10px</span>)}
+  <span class="cm-number">46%</span>,<span class="cm-number">47%</span>{<span class="cm-property">opacity</span>:<span class="cm-number">1</span>;;<span class="cm-property">transform</span>:<span class="cm-variable cm-callee">translateY</span>(<span class="cm-number">0</span>)}
+}
+<span class="cm-def">@keyframes</span> <span class="cm-variable">bar</span>{
+  <span class="cm-number">0%</span>{<span class="cm-property">width</span>:<span class="cm-number">0</span>}
+  <span class="cm-number">100%</span>{<span class="cm-property">width</span>:<span class="cm-number">100%</span>}
+}</code></pre>
+
+        </div>
+
+
+
+
+
+    <div id="result-box" class="code-box active zoom-1" role="region" aria-label="Result">
+
+
+  <iframe allow="accelerometer *; bluetooth *; camera *; clipboard-read *; clipboard-write *; display-capture *; encrypted-media *; geolocation *; gyroscope *; language-detector *; language-model *; microphone *; midi *; rewriter *; serial *; summarizer *; translator *; web-share *; writer *; xr-spatial-tracking *" allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="result-iframe  " frameborder="0" id="result-iframe" loading="lazy" name="CodePen Preview for Loading Micro Animation" sandbox="allow-downloads allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation" scrolling="yes" title="CodePen Preview for Loading Micro Animation" data-src="https://codepen.io/khadkamhn/fullembedgrid/ORVNMW?animations=run&amp;type=embed" src="./ORVNMW.html">
+  </iframe>
+
+
+</div>
+
+
+    <div id="about-box">
+
+  <div class="about-container">
+
+
+    <div class="about-user">
+
+        <a href="https://codepen.io/khadkamhn" target="_blank" rel="noopener"><img src="./default(3).png" loading="lazy" alt="" class="about-image"></a>
+
+      <div class="about-user-info">
+
+
+        <p>
+          This Pen is owned by <a href="https://codepen.io/khadkamhn" target="_blank" rel="noopener">Mohan Khadka</a> on <a href="https://codepen.io/" target="_blank" rel="noopener">CodePen</a>.
+
+        </p>
+
+        <p>
+          <a href="https://codepen.io/khadkamhn" target="_blank" rel="noopener" class="about-user-more">
+          See more by @khadkamhn on CodePen
+          </a>
+        </p>
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+
+    <div id="resources-box" class="resources-box">
+
+  <h3>External CSS</h3>
+    <ol class="list-of-resources">
+        <li>
+          <a href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" target="_blank">https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900</a>
+        </li>
+    </ol>
+
+  <h3>External JavaScript</h3>
+    <p>
+      This Pen doesn't use any external JavaScript resources.
+    </p>
+
+</div>
+
+
+  </div>
+
+    <footer class="embed-footer" id="embed-footer">
+
+    <button id="resources-link" class="resources-link action-button bottom left" href="#resources-box" aria-pressed="false" role="button">
+      Resources
+    </button>
+
+    <ul class="scaling-choices bottom right">
+  <li><button class="action-button" id="zoom-button-1">1×</button></li>
+  <li><button class="action-button" id="zoom-button-05">0.5×</button></li>
+  <li><button class="action-button" id="zoom-button-025">0.25×</button></li>
+</ul>
+
+<button id="rerun-button" class="action-button rerun-button bottom right">
+  Rerun
+</button>
+
+  </footer>
+
+
+
+  <script nonce="">
+    __processedPen = {"html":"&lt;div class=&quot;loader-wrap&quot;&gt;\n&lt;div class=&quot;bottle-wrap&quot;&gt;\n&lt;div class=&quot;cap&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;\n&lt;div class=&quot;bottle&quot;&gt;\n&lt;svg version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; x=&quot;0px&quot; y=&quot;0px&quot;\n\twidth=&quot;26.81px&quot; height=&quot;106.124px&quot; viewBox=&quot;0 0.5 26.81 106.124&quot; enable-background=&quot;new 0 0.5 26.81 106.124&quot; xml:space=&quot;preserve&quot;&gt;\n\t&lt;defs&gt;\n\t&lt;pattern id=&quot;water_fill&quot; width=&quot;.25&quot; height=&quot;1.1&quot; patternContentUnits=&quot;objectBoundingBox&quot;&gt;\n\t&lt;path fill=&quot;#FBCE13&quot; d=&quot;M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z&quot;/&gt;\n\t&lt;/pattern&gt;\n\t&lt;path id=&quot;bottle&quot; d=&quot;M17.905,38.109V9.734c0,0,1.75-3.125,1.375-5.5s-5.875-2.232-5.875-2.232s-5.5-0.143-5.875,2.232\n\ts1.375,5.5,1.375,5.5v28.375c0,0-7.405,1.311-7.405,16.03s0,40.72,0,45.47s5.515,5.515,5.515,5.515h6.39h6.39\n\tc0,0,5.515-0.765,5.515-5.515s0-30.75,0-45.47S17.905,38.109,17.905,38.109z&quot;/&gt;\n\t&lt;mask id=&quot;bottle_mask&quot;&gt;\n\t&lt;use x=&quot;0&quot; y=&quot;0&quot; xlink:href=&quot;#bottle&quot; opacity=&quot;1&quot; fill=&quot;#ffffff&quot;/&gt;\n\t&lt;/mask&gt;\n\t&lt;/defs&gt;\n\t&lt;rect class=&quot;bottle-fill&quot; mask=&quot;url(#bottle_mask)&quot; fill=&quot;url(#water_fill)&quot; x=&quot;-400&quot; y=&quot;0&quot; width=&quot;1600&quot; height=&quot;120&quot;/&gt;\n\t&lt;path id=&quot;btl-out&quot; fill=&quot;none&quot; stroke=&quot;#FCE480&quot; stroke-width=&quot;3&quot; stroke-miterlimit=&quot;10&quot; d=&quot;M17.905,38.109V9.734\n\tc0,0,1.75-3.125,1.375-5.5s-5.875-2.232-5.875-2.232s-5.5-0.143-5.875,2.232s1.375,5.5,1.375,5.5v28.375\n\tc0,0-7.405,1.311-7.405,16.03s0,40.72,0,45.47s5.515,5.515,5.515,5.515h6.39h6.39c0,0,5.515-0.765,5.515-5.515s0-30.75,0-45.47\n\tS17.905,38.109,17.905,38.109z&quot;/&gt;\n&lt;/svg&gt;\n&lt;/div&gt;\n&lt;div class=&quot;bottle&quot;&gt;\n&lt;svg version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; x=&quot;0px&quot; y=&quot;0px&quot;\n\twidth=&quot;32.339px&quot; height=&quot;105.586px&quot; viewBox=&quot;0 0 32.339 105.586&quot; enable-background=&quot;new 0 0 32.339 105.586&quot; xml:space=&quot;preserve&quot;&gt;\n\t&lt;defs&gt;\n\t&lt;pattern id=&quot;water_fill&quot; width=&quot;.25&quot; height=&quot;1.1&quot; patternContentUnits=&quot;objectBoundingBox&quot;&gt;\n\t&lt;path fill=&quot;#FBCE13&quot; d=&quot;M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z&quot;/&gt;\n\t&lt;/pattern&gt;\n\t&lt;path id=&quot;bottle_2&quot; d=&quot;M30.836,48.086c-0.083-3.417-3.167-7.583-3.167-7.583s-3-15.5-4-19.667s-1.417-13.25-0.167-14.583\n\ts0-3.083-1.667-4.083s-5.667-0.583-5.667-0.583s-4-0.417-5.667,0.583S7.584,4.92,8.834,6.253S9.667,16.67,8.667,20.836\n\ts-4,19.667-4,19.667S1.584,44.67,1.5,48.086c-0.083,3.417,1.833,34.833,1.667,37.917C3,89.086,2.25,96.586,2.834,99.67\n\tc0.583,3.083,5.5,4.417,5.5,4.417h7.833H24c0,0,4.917-1.333,5.5-4.417c0.583-3.083-0.167-10.583-0.333-13.667\n\tC29.003,82.919,30.919,51.503,30.836,48.086z&quot;/&gt;\n\t&lt;mask id=&quot;bottle_mask_2&quot;&gt;\n\t&lt;use x=&quot;0&quot; y=&quot;0&quot; xlink:href=&quot;#bottle_2&quot; opacity=&quot;1&quot; fill=&quot;#ffffff&quot;/&gt;\n\t&lt;/mask&gt;\n\t&lt;/defs&gt;\n\t&lt;rect class=&quot;bottle-fill&quot; mask=&quot;url(#bottle_mask_2)&quot; fill=&quot;url(#water_fill)&quot; x=&quot;-400&quot; y=&quot;0&quot; width=&quot;1600&quot; height=&quot;120&quot;/&gt;\n\t&lt;path id=&quot;btl-out&quot; fill=&quot;none&quot; stroke=&quot;#FCE480&quot; stroke-width=&quot;3&quot; stroke-miterlimit=&quot;10&quot; d=&quot;M30.836,48.086\n\tc-0.083-3.417-3.167-7.583-3.167-7.583s-3-15.5-4-19.667s-1.417-13.25-0.167-14.583c1.25-1.333,0-3.083-1.667-4.083\n\tc-1.667-1-5.667-0.583-5.667-0.583s-4-0.417-5.667,0.583c-1.667,1-2.917,2.75-1.667,4.083c1.25,1.333,0.833,10.417-0.167,14.583\n\ts-4,19.667-4,19.667s-3.083,4.167-3.167,7.583c-0.083,3.417,1.833,34.833,1.667,37.917c-0.167,3.083-0.917,10.583-0.333,13.667\n\tc0.583,3.083,5.5,4.417,5.5,4.417h7.833h7.833c0,0,4.917-1.333,5.5-4.417c0.583-3.083-0.167-10.583-0.333-13.667\n\tC29.003,82.919,30.919,51.503,30.836,48.086z&quot;/&gt;\n&lt;/svg&gt;\n&lt;/div&gt;\n&lt;div class=&quot;bottle&quot;&gt;\n&lt;svg version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; x=&quot;0px&quot; y=&quot;0px&quot;\n\twidth=&quot;31.314px&quot; height=&quot;102.629px&quot; viewBox=&quot;0 0 31.314 102.629&quot; enable-background=&quot;new 0 0 31.314 102.629&quot; xml:space=&quot;preserve&quot;&gt;\n\t&lt;defs&gt;\n\t&lt;pattern id=&quot;water_fill&quot; width=&quot;.25&quot; height=&quot;1.1&quot; patternContentUnits=&quot;objectBoundingBox&quot;&gt;\n\t&lt;path fill=&quot;#FBCE13&quot; d=&quot;M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z&quot;/&gt;\n\t&lt;/pattern&gt;\n\t&lt;path id=&quot;bottle_3&quot; d=&quot;M29.157,53.497c-2-10.757-6.688-36.18-7.375-40.493s0.688-1.688,0.25-6.75s-6.375-4.75-6.375-4.75\n\tS9.72,1.191,9.282,6.254s0.938,2.438,0.25,6.75S4.157,42.74,2.157,53.497s1.25,22.757,0.75,29.507s-1.917,12.333,1.333,15.5\n\tc3.25,3.167,8.583,2.583,8.583,2.583h2.833h2.833c0,0,5.333,0.583,8.583-2.583c3.25-3.167,1.833-8.75,1.333-15.5\n\tS31.157,64.254,29.157,53.497z&quot;/&gt;\n\t&lt;mask id=&quot;bottle_mask_3&quot;&gt;\n\t&lt;use x=&quot;0&quot; y=&quot;0&quot; xlink:href=&quot;#bottle_3&quot; opacity=&quot;1&quot; fill=&quot;#ffffff&quot;/&gt;\n\t&lt;/mask&gt;\n\t&lt;/defs&gt;\n\t&lt;rect class=&quot;bottle-fill&quot; mask=&quot;url(#bottle_mask_3)&quot; fill=&quot;url(#water_fill)&quot; x=&quot;-400&quot; y=&quot;0&quot; width=&quot;1600&quot; height=&quot;120&quot;/&gt;\n\t&lt;path id=&quot;btl-out&quot; fill=&quot;none&quot; stroke=&quot;#FCE480&quot; stroke-width=&quot;3&quot; stroke-miterlimit=&quot;10&quot; d=&quot;M29.157,53.497c-2-10.757-6.688-36.18-7.375-40.493\n\ts0.688-1.688,0.25-6.75s-6.375-4.75-6.375-4.75S9.72,1.191,9.282,6.254s0.938,2.438,0.25,6.75S4.157,42.74,2.157,53.497\n\ts1.25,22.757,0.75,29.507s-1.917,12.333,1.333,15.5c3.25,3.167,8.583,2.583,8.583,2.583h2.833h2.833c0,0,5.333,0.583,8.583-2.583\n\tc3.25-3.167,1.833-8.75,1.333-15.5S31.157,64.254,29.157,53.497z&quot;/&gt;\n&lt;/svg&gt;\n&lt;/div&gt;\n&lt;div class=&quot;bottle&quot;&gt;\n&lt;svg version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; x=&quot;0px&quot; y=&quot;0px&quot;\n\twidth=&quot;27.071px&quot; height=&quot;100.378px&quot; viewBox=&quot;0 0 27.071 100.378&quot; enable-background=&quot;new 0 0 27.071 100.378&quot; xml:space=&quot;preserve&quot;&gt;\n\t&lt;defs&gt;\n\t&lt;pattern id=&quot;water_fill&quot; width=&quot;.25&quot; height=&quot;1.1&quot; patternContentUnits=&quot;objectBoundingBox&quot;&gt;\n\t&lt;path fill=&quot;#FBCE13&quot; d=&quot;M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z&quot;/&gt;\n\t&lt;/pattern&gt;\n\t&lt;path id=&quot;bottle_4&quot; d=&quot;M25.474,44.253c-0.564-8.625-3.189-12-5.189-20s-2.5-16-2.5-16s0.438-3.125-0.313-4.625\n\tc-0.706-1.413-2.247-2.15-3.937-2.128c-1.691-0.022-3.231,0.715-3.938,2.128c-0.75,1.5-0.313,4.625-0.313,4.625s-0.5,8-2.5,16\n\ts-4.625,11.375-5.189,20c-0.564,8.625,1.564,35.25,0.626,40.625s-1.375,14,2.813,14c3.029,0,6.375,0,8,0c0,0,0.378,0,1,0\n\tc1.625,0,4.971,0,8,0c4.188,0,3.75-8.625,2.813-14S26.038,52.878,25.474,44.253z&quot;/&gt;\n\t&lt;mask id=&quot;bottle_mask_4&quot;&gt;\n\t&lt;use x=&quot;0&quot; y=&quot;0&quot; xlink:href=&quot;#bottle_4&quot; opacity=&quot;1&quot; fill=&quot;#ffffff&quot;/&gt;\n\t&lt;/mask&gt;\n\t&lt;/defs&gt;\n\t&lt;rect class=&quot;bottle-fill&quot; mask=&quot;url(#bottle_mask_4)&quot; fill=&quot;url(#water_fill)&quot; x=&quot;-400&quot; y=&quot;0&quot; width=&quot;1600&quot; height=&quot;120&quot;/&gt;\n\t&lt;path id=&quot;btl-out&quot; fill=&quot;none&quot; stroke=&quot;#FCE480&quot; stroke-width=&quot;3&quot; stroke-miterlimit=&quot;10&quot; d=&quot;M25.474,44.253c-0.564-8.625-3.189-12-5.189-20\n\ts-2.5-16-2.5-16s0.438-3.125-0.313-4.625c-0.706-1.413-2.247-2.15-3.937-2.128c-1.691-0.022-3.231,0.715-3.938,2.128\n\tc-0.75,1.5-0.313,4.625-0.313,4.625s-0.5,8-2.5,16s-4.625,11.375-5.189,20c-0.564,8.625,1.564,35.25,0.626,40.625\n\ts-1.375,14,2.813,14c3.029,0,6.375,0,8,0c0,0,0.378,0,1,0c1.625,0,4.971,0,8,0c4.188,0,3.75-8.625,2.813-14\n\tS26.038,52.878,25.474,44.253z&quot;/&gt;\n&lt;/svg&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;div class=&quot;bar&quot;&gt;&lt;/div&gt;\n&lt;div class=&quot;text&quot;&gt;loading&lt;/div&gt;\n&lt;/div&gt;","css":"body{\n\tmargin:0;\n\tcolor:#444;\n\tbackground-color:#141414;\n\tfont:300 18px/18px Roboto, sans-serif;\n}\n*,:after,:before{box-sizing:border-box}\n.pull-left{float:left}\n.pull-right{float:right}\n.clearfix:after,.clearfix:before{content:&#39;&#39;;display:table}\n.clearfix:after{clear:both;display:block}\n\n.loader-wrap{\n\ttop:50%;\n\tleft:50%;\n\twidth:374px;\n\theight:194px;\n\tposition:fixed;\n\tmargin-top:-97px;\n\tmargin-left:-187px;\n}\n.bar{\n\theight:5px;\n\twidth:100%;\n\tmargin:30px 0;\n\tposition:relative;\n\tbackground-color:#444;\n}\n.bar:before{\n\ttop:0;\n\tleft:0;\n\twidth:0;\n\tcontent:&#39;&#39;;\n\theight:inherit;\n\tposition:absolute;\n\tbackground-color:#FBCE13;\n\t-webkit-animation:bar 2500ms linear infinite;\n\t        animation:bar 2500ms linear infinite;\n}\n.text{\n\tcolor:#FBCE13;\n\tfont-size:24px;\n\tfont-weight:500;\n\ttext-align:center;\n\tletter-spacing:10px;\n\ttext-transform:uppercase;\n}\n.cap{\n\tleft:0;\n\tright:0;\n\ttop:-15px;\n\tz-index:1;\n\twidth:100%;\n\tposition:absolute;\n}\n.cap&gt;i{\n\topacity:0;\n\theight:3px;\n\twidth:16px;\n\tmargin-left:12px;\n\tborder-radius:3px;\n\tposition:absolute;\n\tbackground-color:#FBCE13;\n\t-webkit-animation:move-cap 2500ms linear infinite;\n\t        animation:move-cap 2500ms linear infinite;\n}\n.bottle-fill{\n\t-webkit-animation:waves 2500ms infinite linear, fill 2500ms infinite forwards;\n\t        animation:waves 2500ms infinite linear, fill 2500ms infinite forwards;\n}\n.bottle-wrap{\n\theight:110px;\n\tposition:relative;\n}\n.bottle{\n\tbottom:0;\n\topacity:0;\n\twidth:40px;\n\ttext-align:center;\n\tposition: absolute;\n\tdisplay:inline-block;\n\tvertical-align:bottom;\n\ttransform-origin:bottom right;\n\ttransform:translateX(-300px);\n\t-webkit-animation:move 2500ms linear infinite;\n\t        animation:move 2500ms linear infinite;\n}\n.bottle:before,\n.bottle:after{\n\tleft:50%;\n\topacity:0;\n\tcontent:&#39;&#39;;\n\tposition:absolute;\n\tbackground-color:#FBCE13;\n}\n.bottle:before{\n\topacity:1;\n\twidth:4px;\n\ttop:-40px;\n\theight:14px;\n\tmargin-left:-2px;\n\t-webkit-animation:lock-cap 2500ms linear infinite;\n\t        animation:lock-cap 2500ms linear infinite;\n}\n.bottle:after{\n\ttop:0;\n\theight:4px;\n\twidth:16px;\n\tmargin-left:-8px;\n\tborder-radius:4px;\n\t-webkit-animation:show-cap 2500ms linear infinite;\n\t        animation:show-cap 2500ms linear infinite;\n}\n.cap&gt;i:nth-child(2),\n.bottle:nth-child(2),\n.bottle:nth-child(2):before,\n.bottle:nth-child(2):after,\n.bottle:nth-child(2) .bottle-fill{\n\t-webkit-animation-delay:625ms;\n\t        animation-delay:625ms;\n}\n.cap&gt;i:nth-child(3),\n.bottle:nth-child(3),\n.bottle:nth-child(3):before,\n.bottle:nth-child(3):after,\n.bottle:nth-child(3) .bottle-fill{\n\t-webkit-animation-delay:1250ms;\n\t        animation-delay:1250ms;\n}\n.cap&gt;i:nth-child(4),\n.bottle:nth-child(4),\n.bottle:nth-child(4):before,\n.bottle:nth-child(4):after,\n.bottle:nth-child(4) .bottle-fill{\n\t-webkit-animation-delay:1875ms;\n\t        animation-delay:1875ms;\n}\n.bottle svg{vertical-align:bottom;display:block;margin:auto}\n\n@-webkit-keyframes waves{\n\t0%{ x:-200px }\n\t25%{ x:-100px }\n\t50%{ x:-200px }\n\t75%,\n\t100%{ x:-40px }\n}\n\n@keyframes waves{\n\t0%{ x:-200px }\n\t25%{ x:-100px }\n\t50%{ x:-200px }\n\t75%,\n\t100%{ x:-40px }\n}\n@-webkit-keyframes fill{\n\t0%{ height:0; y:125px}\n\t30%,\n\t100%{ height:100px; y:25px}\n}\n@keyframes fill{\n\t0%{ height:0; y:125px}\n\t30%,\n\t100%{ height:100px; y:25px}\n}\n\n@-webkit-keyframes move{\n\t0%{\n\t\topacity:0;\n\t\ttransform:translateX(0);\n\t}\n\t25%{\n\t\topacity:1;\n\t\ttransform:translateX(75px);\n\t}\n\t48%{transform:translateX(144px) translateY(0);}\n\t50%{\n\t\ttransform:translateX(150px) translateY(-10px);\n\t}\n\t52%{transform:translateX(156px) translateY(0);}\n\t75%{\n\t\topacity:1;\n\t\ttransform:translateX(225px);\n\t}\n\t100%{\n\t\topacity:0;\n\t\ttransform:translateX(300px);\n\t}\n}\n\n@keyframes move{\n\t0%{\n\t\topacity:0;\n\t\ttransform:translateX(0);\n\t}\n\t25%{\n\t\topacity:1;\n\t\ttransform:translateX(75px);\n\t}\n\t48%{transform:translateX(144px) translateY(0);}\n\t50%{\n\t\ttransform:translateX(150px) translateY(-10px);\n\t}\n\t52%{transform:translateX(156px) translateY(0);}\n\t75%{\n\t\topacity:1;\n\t\ttransform:translateX(225px);\n\t}\n\t100%{\n\t\topacity:0;\n\t\ttransform:translateX(300px);\n\t}\n}\n@-webkit-keyframes move-cap{\n\t0%{\n\t\topacity:0;\n\t\ttransform:translate(0,0);\n\t}\n\t25%{\n\t\topacity:1;\n\t\ttransform:translate(75px,0);\n\t}\n\t45%{opacity:1}\n\t48%{transform:translate(144px, 0)}\n\t50%{\n\t\ttransform:translate(150px,10px);\n\t}\n\t52%{opacity:0}\n\t75%{\n\t\ttransform:translate(225px,0);\n\t}\n\t100%{\n\t\topacity:0;\n\t\ttransform:translate(300px,0);\n\t}\n}\n@keyframes move-cap{\n\t0%{\n\t\topacity:0;\n\t\ttransform:translate(0,0);\n\t}\n\t25%{\n\t\topacity:1;\n\t\ttransform:translate(75px,0);\n\t}\n\t45%{opacity:1}\n\t48%{transform:translate(144px, 0)}\n\t50%{\n\t\ttransform:translate(150px,10px);\n\t}\n\t52%{opacity:0}\n\t75%{\n\t\ttransform:translate(225px,0);\n\t}\n\t100%{\n\t\topacity:0;\n\t\ttransform:translate(300px,0);\n\t}\n}\n@-webkit-keyframes show-cap{\n\t0%,45%{opacity:0}\n\t48%,90%{opacity:1}\n}\n@keyframes show-cap{\n\t0%,45%{opacity:0}\n\t48%,90%{opacity:1}\n}\n@-webkit-keyframes lock-cap{\n\t0%,45%,48%,100%{opacity:0;transform:translateY(-10px)}\n\t46%,47%{opacity:1;;transform:translateY(0)}\n}\n@keyframes lock-cap{\n\t0%,45%,48%,100%{opacity:0;transform:translateY(-10px)}\n\t46%,47%{opacity:1;;transform:translateY(0)}\n}\n@-webkit-keyframes bar{\n\t0%{width:0}\n\t100%{width:100%}\n}\n@keyframes bar{\n\t0%{width:0}\n\t100%{width:100%}\n}","js":""};
+    __preprocessors = {
+      "html": "none",
+      "css": "none",
+      "js": "none"
+    };
+    __preprocessorNames = {
+      "html": "HTML",
+      "css": "CSS",
+      "js": "JS"
+    };
+    __editable = false;
+    __embed_prefill = false;
+  </script>
+
+  <script src="./embed-d492f8b0f63f0a8ba679c9cd0a2fffbaa24504a7928435ba1bfc1859f904e02b.js.download"></script>
+
+
+
+
+</body></html>

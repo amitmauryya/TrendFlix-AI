@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)https://cdpn.io/motionimaging/fullembedgrid/MKrQXa?animations=run&type=embed -->
+<html lang="en"><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/extend-native-history-api.js"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/requests.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+
+
+
+  
+  
+
+  <title>Paw walking loader</title>
+
+    <link rel="canonical" href="https://codepen.io/motionimaging/pen/MKrQXa">
+  
+  <link rel="stylesheet" href="./reset-2.0.min.css">
+
+  
+  
+<style>
+.ajax-loader {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform-origin: 50% 50%;
+  transform: rotate(90deg) translate(-50%, 0%);
+  font-size: 50px;
+  width: 1em;
+  height: 3em;
+  color: #d31145;
+}
+.ajax-loader .paw {
+  width: 1em;
+  height: 1em;
+  -webkit-animation: 2050ms pawAnimation ease-in-out infinite;
+          animation: 2050ms pawAnimation ease-in-out infinite;
+  opacity: 0;
+}
+.ajax-loader .paw svg {
+  width: 100%;
+  height: 100%;
+}
+.ajax-loader .paw .icon {
+  fill: currentColor;
+}
+.ajax-loader .paw:nth-child(odd) {
+  transform: rotate(-10deg);
+}
+.ajax-loader .paw:nth-child(even) {
+  transform: rotate(10deg) translate(125%, 0);
+}
+.ajax-loader .paw:nth-child(1) {
+  -webkit-animation-delay: 1.25s;
+          animation-delay: 1.25s;
+}
+.ajax-loader .paw:nth-child(2) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+.ajax-loader .paw:nth-child(3) {
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+}
+.ajax-loader .paw:nth-child(4) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+.ajax-loader .paw:nth-child(5) {
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+.ajax-loader .paw:nth-child(6) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.no-cssanimations .ajax-loader .paw {
+  opacity: 1;
+}
+
+@-webkit-keyframes pawAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pawAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+</style>
+
+  
+  
+  
+<script bis_use="true" type="text/javascript" charset="utf-8" data-bis-config="[&quot;facebook.com/&quot;,&quot;twitter.com/&quot;,&quot;youtube-nocookie.com/embed/&quot;,&quot;//vk.com/&quot;,&quot;//www.vk.com/&quot;,&quot;linkedin.com/&quot;,&quot;//www.linkedin.com/&quot;,&quot;//instagram.com/&quot;,&quot;//www.instagram.com/&quot;,&quot;//www.google.com/recaptcha/api2/&quot;,&quot;//hangouts.google.com/webchat/&quot;,&quot;//www.google.com/calendar/&quot;,&quot;//www.google.com/maps/embed&quot;,&quot;spotify.com/&quot;,&quot;soundcloud.com/&quot;,&quot;//player.vimeo.com/&quot;,&quot;//disqus.com/&quot;,&quot;//tgwidget.com/&quot;,&quot;//js.driftt.com/&quot;,&quot;friends2follow.com&quot;,&quot;/widget&quot;,&quot;login&quot;,&quot;//video.bigmir.net/&quot;,&quot;blogger.com&quot;,&quot;//smartlock.google.com/&quot;,&quot;//keep.google.com/&quot;,&quot;/web.tolstoycomments.com/&quot;,&quot;moz-extension://&quot;,&quot;chrome-extension://&quot;,&quot;/auth/&quot;,&quot;//analytics.google.com/&quot;,&quot;adclarity.com&quot;,&quot;paddle.com/checkout&quot;,&quot;hcaptcha.com&quot;,&quot;recaptcha.net&quot;,&quot;2captcha.com&quot;,&quot;accounts.google.com&quot;,&quot;www.google.com/shopping/customerreviews&quot;,&quot;buy.tinypass.com&quot;,&quot;gstatic.com&quot;,&quot;secureir.ebaystatic.com&quot;,&quot;docs.google.com&quot;,&quot;contacts.google.com&quot;,&quot;github.com&quot;,&quot;mail.google.com&quot;,&quot;chat.google.com&quot;,&quot;audio.xpleer.com&quot;,&quot;keepa.com&quot;,&quot;static.xx.fbcdn.net&quot;,&quot;sas.selleramp.com&quot;,&quot;1plus1.video&quot;,&quot;console.googletagservices.com&quot;,&quot;//lnkd.demdex.net/&quot;,&quot;//radar.cedexis.com/&quot;,&quot;//li.protechts.net/&quot;,&quot;challenges.cloudflare.com/&quot;,&quot;ogs.google.com&quot;]" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/traffic.js"></script></head>
+
+<body translate="no" __processed_723a0ac7-1d58-4160-8c6c-f61fa0e613f2__="true" bis_status="ok" bis_frame_id="81">
+  <svg id="svg-sprite">
+	<symbol id="paw" viewBox="0 0 249 209.32">
+		<ellipse cx="27.917" cy="106.333" stroke-width="0" rx="27.917" ry="35.833"></ellipse>
+		<ellipse cx="84.75" cy="47.749" stroke-width="0" rx="34.75" ry="47.751"></ellipse>
+		<ellipse cx="162" cy="47.749" stroke-width="0" rx="34.75" ry="47.751"></ellipse>
+		<ellipse cx="221.083" cy="106.333" stroke-width="0" rx="27.917" ry="35.833"></ellipse>
+		<path stroke-width="0" d="M43.98 165.39s9.76-63.072 76.838-64.574c0 0 71.082-6.758 83.096 70.33 0 0 2.586 19.855-12.54 31.855 0 0-15.75 17.75-43.75-6.25 0 0-7.124-8.374-24.624-7.874 0 0-12.75-.125-21.5 6.625 0 0-16.375 18.376-37.75 12.75 0 0-28.29-7.72-19.77-42.86z"></path>
+	</symbol>
+</svg>
+
+<div class="ajax-loader">
+	<div class="paw"><svg class="icon"><use xlink:href="#paw"></use></svg></div>
+	<div class="paw"><svg class="icon"><use xlink:href="#paw"></use></svg></div>
+	<div class="paw"><svg class="icon"><use xlink:href="#paw"></use></svg></div>
+	<div class="paw"><svg class="icon"><use xlink:href="#paw"></use></svg></div>
+	<div class="paw"><svg class="icon"><use xlink:href="#paw"></use></svg></div>
+	<div class="paw"><svg class="icon"><use xlink:href="#paw"></use></svg></div>
+</div>
+  
+  
+  
+  <script src="./iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js.download"></script>
+
+
+
+</body></html>

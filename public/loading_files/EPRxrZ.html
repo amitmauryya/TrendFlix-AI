@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)https://cdpn.io/drewendly/fullembedgrid/EPRxrZ?animations=run&type=embed -->
+<html lang="en"><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/extend-native-history-api.js"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/requests.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+
+
+
+  
+    <script src="./stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js.download"></script>
+
+
+  <title>Cube Float [pure css] ∫</title>
+
+    <link rel="canonical" href="https://codepen.io/drewendly/pen/EPRxrZ">
+  
+<link href="./css(1)" rel="stylesheet">
+
+<link href="./css(2)" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="./reset-2.0.min.css">
+
+  
+  
+<style>
+html {
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.buttonCont {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  left: 1.25em;
+  top: 1.25em;
+  padding: 1em 0;
+  width: 8.5em;
+  height: 15em;
+  border-radius: 0.15em;
+  background: rgba(195, 198, 205, 0.06);
+  box-shadow: inset 2em 2em 12em -4em rgba(195, 198, 205, 0.2);
+}
+.buttonCont .button {
+  position: relative;
+  display: block;
+  padding: 0 1em;
+  height: 2.5em;
+  font-family: "Open Sans";
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 8px;
+  line-height: 2.5em;
+  border-radius: 0.15em;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.6s ease;
+}
+.buttonCont .button.gemBlue_B {
+  color: #276EFF;
+  background-color: #1E2448;
+}
+.buttonCont .button.phosGreen-II_B {
+  color: #15f4c2;
+  background-color: #0A1819;
+}
+.buttonCont .button.honeyComb_B {
+  color: #FCB367;
+  background-color: #FFF8E4;
+}
+.buttonCont .button.whtSlate_B {
+  color: #a0aAa9;
+  background-color: #E4EDEC;
+}
+
+#colorWrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: #0e0c10;
+  transition: background-color 0.35s ease-out;
+  /*@keyframes aniCL {
+    0%, 25%, 50%, 75%, 100% { background: nth($cL, 1); }
+    12%, 36%, 64%, 89%,  { background: nth($c, 1); }
+  }*/
+}
+#colorWrapper .grid {
+  width: 8.75em;
+  height: 6.25em;
+  transform: rotateX(-35deg) rotateY(-45deg);
+  /* animation: revolveGrid 6s ease infinite alternate;
+   @keyframes revolveGrid {
+     from {transform: rotateX(-65deg) rotateY(-45deg);}
+     to {transform: rotateX(-15deg) rotateY(-45deg);}
+   } */
+}
+#colorWrapper .grid, #colorWrapper .grid * {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+}
+#colorWrapper .cube:nth-child(1) {
+  transform: translate3d(-5.25em, 0, -5.25em);
+}
+#colorWrapper .cube:nth-child(1) .lifter, #colorWrapper .cube:nth-child(1) .cube__face:nth-child(1) {
+  -webkit-animation-delay: 0.44037s;
+          animation-delay: 0.44037s;
+}
+#colorWrapper .cube:nth-child(2) {
+  transform: translate3d(-1.75em, 0, -5.25em);
+}
+#colorWrapper .cube:nth-child(2) .lifter, #colorWrapper .cube:nth-child(2) .cube__face:nth-child(1) {
+  -webkit-animation-delay: 0.58716s;
+          animation-delay: 0.58716s;
+}
+#colorWrapper .cube:nth-child(3) {
+  transform: translate3d(1.75em, 0, -5.25em);
+}
+#colorWrapper .cube:nth-child(3) .lifter, #colorWrapper .cube:nth-child(3) .cube__face:nth-child(1) {
+  -webkit-animation-delay: 0.73395s;
+          animation-delay: 0.73395s;
+}
+#colorWrapper .cube:nth-child(4) {
+  transform: translate3d(5.25em, 0, -5.25em);
+}
+#colorWrapper .cube:nth-child(4) .lifter, #colorWrapper .cube:nth-child(4) .cube__face:nth-child(1) {
+  -webkit-animation-delay: 0.88074s;
+          animation-delay: 0.88074s;
+}
+#colorWrapper .cube:nth-child(5) {
+  transform: translate3d(-5.25em, 0, -1.75em);
+}
+#colorWrapper .cube:nth-child(5) .lifter, #colorWrapper .cube:nth-child(5) .cube__face:nth-child(1) {
+  -webkit-animation-delay: 0.29358s;
+          animation-delay: 0.29358s;
+}
+#colorWrapper .cube:nth-child(6) {
+  transform: translate3d(-1.75em, 0, -1.75em);
+}
+#colorWrapper .cube:nth-child(6) .lifter, #colorWrapper .cube:nth-child(6) .cube__face:nth-child(1) {
+  -webkit-animation-delay: 0.44037s;
+          animation-delay: 0.44037s;
+}
+#colorWrapper .cube:nth-child(7) {
+  transform: translate3d(1.75em, 0, -1.75em);
+}
+#colorWrapper .cube:nth-child(7) .lifter, #colorWrapper .cube:nth-child(7) .cube__face:nth-child(1) {
+  -webkit-animation-delay: 0.58716s;
+          animation-delay: 0.58716s;
+}
+#colorWrapper .cube:nth-child(8) {
+  transform: translate3d(5.25em, 0, -1.75em);
+}
+#colorWrapper .cube:nth-child(8) .lifter, #colorWrapper .cube:nth-child(8) .cube__face:nth-child(1) {
+  -webkit-animation-delay: 0.73395s;
+          animation-delay: 0.73395s;
+}
+#colorWrapper .cube:nth-child(9) {
+  transform: translate3d(-5.25em, 0, 1.75em);
+}
+#colorWrapper .cube:nth-child(9) .lifter, #colorWrapper .cube:nth-child(9) .cube__face:nth-child(1) {
+  -webkit-animation-delay: 0.14679s;
+          animation-delay: 0.14679s;
+}
+#colorWrapper .cube:nth-child(10) {
+  transform: translate3d(-1.75em, 0, 1.75em);
+}
+#colorWrapper .cube:nth-child(10) .lifter, #colorWrapper .cube:nth-child(10) .cube__face:nth-child(1) {
+  -webkit-animation-delay: 0.29358s;
+          animation-delay: 0.29358s;
+}
+#colorWrapper .cube:nth-child(11) {
+  transform: translate3d(1.75em, 0, 1.75em);
+}
+#colorWrapper .cube:nth-child(11) .lifter, #colorWrapper .cube:nth-child(11) .cube__face:nth-child(1) {
+  -webkit-animation-delay: 0.44037s;
+          animation-delay: 0.44037s;
+}
+#colorWrapper .cube:nth-child(12) {
+  transform: translate3d(5.25em, 0, 1.75em);
+}
+#colorWrapper .cube:nth-child(12) .lifter, #colorWrapper .cube:nth-child(12) .cube__face:nth-child(1) {
+  -webkit-animation-delay: 0.58716s;
+          animation-delay: 0.58716s;
+}
+#colorWrapper .cube:nth-child(13) {
+  transform: translate3d(-5.25em, 0, 5.25em);
+}
+#colorWrapper .cube:nth-child(13) .lifter, #colorWrapper .cube:nth-child(13) .cube__face:nth-child(1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+#colorWrapper .cube:nth-child(14) {
+  transform: translate3d(-1.75em, 0, 5.25em);
+}
+#colorWrapper .cube:nth-child(14) .lifter, #colorWrapper .cube:nth-child(14) .cube__face:nth-child(1) {
+  -webkit-animation-delay: 0.14679s;
+          animation-delay: 0.14679s;
+}
+#colorWrapper .cube:nth-child(15) {
+  transform: translate3d(1.75em, 0, 5.25em);
+}
+#colorWrapper .cube:nth-child(15) .lifter, #colorWrapper .cube:nth-child(15) .cube__face:nth-child(1) {
+  -webkit-animation-delay: 0.29358s;
+          animation-delay: 0.29358s;
+}
+#colorWrapper .cube:nth-child(16) {
+  transform: translate3d(5.25em, 0, 5.25em);
+}
+#colorWrapper .cube:nth-child(16) .lifter, #colorWrapper .cube:nth-child(16) .cube__face:nth-child(1) {
+  -webkit-animation-delay: 0.44037s;
+          animation-delay: 0.44037s;
+}
+#colorWrapper .cube__face {
+  margin: -7.5em;
+  width: 2.75em;
+  height: 2.75em;
+  transition: background 0.35s ease-out;
+}
+#colorWrapper .cube__face:nth-child(1) {
+  transform: rotateX(90deg) translateZ(1.375em);
+  background: #101418;
+}
+#colorWrapper .cube__face:nth-child(1) {
+  background: #101418;
+  -webkit-animation: aniCL 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+          animation: aniCL 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+}
+#colorWrapper .cube__face:nth-child(2) {
+  transform: rotateY(90deg) translateZ(1.375em);
+  background: #333f80;
+}
+#colorWrapper .cube__face:nth-child(1) {
+  background: #101418;
+  -webkit-animation: aniCL 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+          animation: aniCL 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+}
+#colorWrapper .cube__face:nth-child(3) {
+  transform: translateZ(1.375em);
+  background: #276EFF;
+}
+#colorWrapper .cube__face:nth-child(1) {
+  background: #101418;
+  -webkit-animation: aniCL 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+          animation: aniCL 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+}
+#colorWrapper .lifter {
+  transform-origin: 0 1.375em;
+  transform: scaleY(0);
+  -webkit-animation: ani 0.7875s cubic-bezier(0.5, 0.1, 0.5, 0.9) alternate infinite;
+          animation: ani 0.7875s cubic-bezier(0.5, 0.1, 0.5, 0.9) alternate infinite;
+}
+@-webkit-keyframes ani {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(0.533);
+  }
+}
+@keyframes ani {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(0.533);
+  }
+}
+
+/*
+.shadow {
+  position: relative;
+  top: 50vh;
+  margin: 0 auto; margin-top: -200px;
+  width: 200px; height: 200px;
+  background-color: transparent;
+  transform: rotateX(60deg) rotate(45deg);
+  z-index: -1;
+}
+.flatShadow {
+  margin-top: 20px;
+  background-color: rgba(60,0,0,0.008);
+}
+// .dropShadow { box-shadow: 420px 400px 160px rgba(90,0,0,0.1);}  
+*/
+#colorWrapper.honeyComb {
+  background-color: #fafcfb;
+}
+#colorWrapper.honeyComb .cube__face:nth-child(1) {
+  background: #FFF2D0;
+}
+#colorWrapper.honeyComb .cube__face:nth-child(1) {
+  background: #FFF2D0;
+  -webkit-animation: aniCL-honeyComb 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+          animation: aniCL-honeyComb 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+}
+#colorWrapper.honeyComb .cube__face:nth-child(2) {
+  background: #FFD792;
+}
+#colorWrapper.honeyComb .cube__face:nth-child(1) {
+  background: #FFF2D0;
+  -webkit-animation: aniCL-honeyComb 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+          animation: aniCL-honeyComb 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+}
+#colorWrapper.honeyComb .cube__face:nth-child(3) {
+  background: #FCB367;
+}
+#colorWrapper.honeyComb .cube__face:nth-child(1) {
+  background: #FFF2D0;
+  -webkit-animation: aniCL-honeyComb 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+          animation: aniCL-honeyComb 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+}
+@-webkit-keyframes aniCL-honeyComb {
+  0% {
+    background: #FFF8E4;
+  }
+  100% {
+    background: #FFF2D0;
+  }
+}
+@keyframes aniCL-honeyComb {
+  0% {
+    background: #FFF8E4;
+  }
+  100% {
+    background: #FFF2D0;
+  }
+}
+
+#colorWrapper.whtSlate {
+  background-color: #fafcfb;
+}
+#colorWrapper.whtSlate .cube__face:nth-child(1) {
+  background: #D0DAD9;
+}
+#colorWrapper.whtSlate .cube__face:nth-child(1) {
+  background: #D0DAD9;
+  -webkit-animation: aniCL-whtSlate 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+          animation: aniCL-whtSlate 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+}
+#colorWrapper.whtSlate .cube__face:nth-child(2) {
+  background: #B9C6C7;
+}
+#colorWrapper.whtSlate .cube__face:nth-child(1) {
+  background: #D0DAD9;
+  -webkit-animation: aniCL-whtSlate 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+          animation: aniCL-whtSlate 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+}
+#colorWrapper.whtSlate .cube__face:nth-child(3) {
+  background: #E4EDEC;
+}
+#colorWrapper.whtSlate .cube__face:nth-child(1) {
+  background: #D0DAD9;
+  -webkit-animation: aniCL-whtSlate 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+          animation: aniCL-whtSlate 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+}
+@-webkit-keyframes aniCLwht-Slate {
+  0% {
+    background: #D0DAD9;
+  }
+  100% {
+    background: #D0DAD9;
+  }
+}
+@keyframes aniCLwht-Slate {
+  0% {
+    background: #D0DAD9;
+  }
+  100% {
+    background: #D0DAD9;
+  }
+}
+
+#colorWrapper.phosGreen-II {
+  background-color: #101216;
+}
+#colorWrapper.phosGreen-II .cube__face:nth-child(1) {
+  background: #0A1819;
+}
+#colorWrapper.phosGreen-II .cube__face:nth-child(1) {
+  background: #0A1819;
+  -webkit-animation: aniCL-phosGreen-II 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+          animation: aniCL-phosGreen-II 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+}
+#colorWrapper.phosGreen-II .cube__face:nth-child(2) {
+  background: #102928;
+}
+#colorWrapper.phosGreen-II .cube__face:nth-child(1) {
+  background: #0A1819;
+  -webkit-animation: aniCL-phosGreen-II 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+          animation: aniCL-phosGreen-II 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+}
+#colorWrapper.phosGreen-II .cube__face:nth-child(3) {
+  background: #15f4c2;
+}
+#colorWrapper.phosGreen-II .cube__face:nth-child(1) {
+  background: #0A1819;
+  -webkit-animation: aniCL-phosGreen-II 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+          animation: aniCL-phosGreen-II 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+}
+@-webkit-keyframes aniCL-phosGreen-II {
+  0% {
+    background: #0d2c2f;
+  }
+  100% {
+    background: #0A1819;
+  }
+}
+@keyframes aniCL-phosGreen-II {
+  0% {
+    background: #0d2c2f;
+  }
+  100% {
+    background: #0A1819;
+  }
+}
+
+#colorWrapper.gemBlue {
+  background-color: #0c0c14;
+}
+#colorWrapper.gemBlue .cube__face:nth-child(1) {
+  background: #101C28;
+}
+#colorWrapper.gemBlue .cube__face:nth-child(1) {
+  background: #101C28;
+  -webkit-animation: aniCL-gemBlue 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+          animation: aniCL-gemBlue 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+}
+#colorWrapper.gemBlue .cube__face:nth-child(2) {
+  background: #2D59C8;
+}
+#colorWrapper.gemBlue .cube__face:nth-child(1) {
+  background: #101C28;
+  -webkit-animation: aniCL-gemBlue 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+          animation: aniCL-gemBlue 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+}
+#colorWrapper.gemBlue .cube__face:nth-child(3) {
+  background: #10AAFF;
+}
+#colorWrapper.gemBlue .cube__face:nth-child(1) {
+  background: #101C28;
+  -webkit-animation: aniCL-gemBlue 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+          animation: aniCL-gemBlue 0.7875s cubic-bezier(0.4, 0.2, 0.4, 0.6) alternate infinite;
+}
+@-webkit-keyframes aniCL-gemBlue {
+  0% {
+    background: #1B2E6E;
+  }
+  100% {
+    background: #101C28;
+  }
+}
+@keyframes aniCL-gemBlue {
+  0% {
+    background: #1B2E6E;
+  }
+  100% {
+    background: #101C28;
+  }
+}
+
+/*/\\/   RIPPLE CLICK FX ---Start----   /\/\*/
+.inkAnchor {
+  cursor: pointer;
+  /*since the links are dummy without href values*/
+  /*prevent text selection*/
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  /*static positioned elements appear behind absolutely positioned siblings(.ink in this case) hence we will make the links relatively positioned to bring them above .ink*/
+  position: relative;
+}
+
+/*.ink styles - the elements which will create the ripple effect. The size and position of these elements will be set by the JS code. Initially these elements will be scaled down to 0% and later animated to large fading circles on user click.*/
+.button:active {
+  transition: box-shadow 0.15s ease-out;
+  box-shadow: 0 0.5em 0.33em -0.33em rgba(0, 0, 0, 0.12), 0 0.33em 1em -0.25em rgba(0, 0, 0, 0.2);
+}
+
+.whtSlate_B .ink {
+  background-color: #B9C6C7;
+}
+
+.honeyComb_B .ink {
+  background-color: #FFD792;
+}
+
+.phosGreen-II_B .ink {
+  background-color: #15f4c2;
+}
+
+.gemBlue_B .ink {
+  background-color: #276EFF;
+}
+
+.ink {
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  background-color: blue;
+  pointer-events: none !important;
+}
+
+/*animation effect*/
+.ink.animateInk {
+  -webkit-animation: ripple 0.9s cubic-bezier(0.2, 0.2, 0, 1) forwards 1;
+          animation: ripple 0.9s cubic-bezier(0.2, 0.2, 0, 1) forwards 1;
+}
+
+@-webkit-keyframes ripple {
+  0% {
+    opacity: 0.6;
+    transform: scale(0);
+    /*box-shadow: inset 0 0 0 12em ;*/
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+    /* box-shadow: inset 0 0 0 0em ;*/
+  }
+}
+
+@keyframes ripple {
+  0% {
+    opacity: 0.6;
+    transform: scale(0);
+    /*box-shadow: inset 0 0 0 12em ;*/
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+    /* box-shadow: inset 0 0 0 0em ;*/
+  }
+}
+</style>
+
+  
+  
+  
+<script bis_use="true" type="text/javascript" charset="utf-8" data-bis-config="[&quot;facebook.com/&quot;,&quot;twitter.com/&quot;,&quot;youtube-nocookie.com/embed/&quot;,&quot;//vk.com/&quot;,&quot;//www.vk.com/&quot;,&quot;linkedin.com/&quot;,&quot;//www.linkedin.com/&quot;,&quot;//instagram.com/&quot;,&quot;//www.instagram.com/&quot;,&quot;//www.google.com/recaptcha/api2/&quot;,&quot;//hangouts.google.com/webchat/&quot;,&quot;//www.google.com/calendar/&quot;,&quot;//www.google.com/maps/embed&quot;,&quot;spotify.com/&quot;,&quot;soundcloud.com/&quot;,&quot;//player.vimeo.com/&quot;,&quot;//disqus.com/&quot;,&quot;//tgwidget.com/&quot;,&quot;//js.driftt.com/&quot;,&quot;friends2follow.com&quot;,&quot;/widget&quot;,&quot;login&quot;,&quot;//video.bigmir.net/&quot;,&quot;blogger.com&quot;,&quot;//smartlock.google.com/&quot;,&quot;//keep.google.com/&quot;,&quot;/web.tolstoycomments.com/&quot;,&quot;moz-extension://&quot;,&quot;chrome-extension://&quot;,&quot;/auth/&quot;,&quot;//analytics.google.com/&quot;,&quot;adclarity.com&quot;,&quot;paddle.com/checkout&quot;,&quot;hcaptcha.com&quot;,&quot;recaptcha.net&quot;,&quot;2captcha.com&quot;,&quot;accounts.google.com&quot;,&quot;www.google.com/shopping/customerreviews&quot;,&quot;buy.tinypass.com&quot;,&quot;gstatic.com&quot;,&quot;secureir.ebaystatic.com&quot;,&quot;docs.google.com&quot;,&quot;contacts.google.com&quot;,&quot;github.com&quot;,&quot;mail.google.com&quot;,&quot;chat.google.com&quot;,&quot;audio.xpleer.com&quot;,&quot;keepa.com&quot;,&quot;static.xx.fbcdn.net&quot;,&quot;sas.selleramp.com&quot;,&quot;1plus1.video&quot;,&quot;console.googletagservices.com&quot;,&quot;//lnkd.demdex.net/&quot;,&quot;//radar.cedexis.com/&quot;,&quot;//li.protechts.net/&quot;,&quot;challenges.cloudflare.com/&quot;,&quot;ogs.google.com&quot;]" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/traffic.js"></script></head>
+
+<body translate="no" __processed_ef12d5ae-1893-4c43-8ffe-e9b5001bccb6__="true" bis_status="ok" bis_frame_id="79">
+  <div class="measure"></div>
+<ul class="buttonCont">
+  <li class="button inkAnchor whtSlate_B">White Slate</li>
+  <li class="button inkAnchor honeyComb_B">Honey Comb</li>
+  <li class="button inkAnchor phosGreen-II_B">Phos. Green</li>
+  <li class="button inkAnchor gemBlue_B">Gem Blue</li>
+</ul>
+<div id="colorWrapper" class="gemBlue">
+  <div class="grid">
+    <div class="cube">
+      <div class="lifter">
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+      </div>
+    </div>
+    <div class="cube">
+      <div class="lifter">
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+      </div>
+    </div>
+    <div class="cube">
+      <div class="lifter">
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+      </div>
+    </div>
+    <div class="cube">
+      <div class="lifter">
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+      </div>
+    </div>
+    <div class="cube">
+      <div class="lifter">
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+      </div>
+    </div>
+    <div class="cube">
+      <div class="lifter">
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+      </div>
+    </div>
+    <div class="cube">
+      <div class="lifter">
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+      </div>
+    </div>
+    <div class="cube">
+      <div class="lifter">
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+      </div>
+    </div>
+    <div class="cube">
+      <div class="lifter">
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+      </div>
+    </div>
+    <div class="cube">
+      <div class="lifter">
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+      </div>
+    </div>
+    <div class="cube">
+      <div class="lifter">
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+      </div>
+    </div>
+    <div class="cube">
+      <div class="lifter">
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+      </div>
+    </div>
+    <div class="cube">
+      <div class="lifter">
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+      </div>
+    </div>
+    <div class="cube">
+      <div class="lifter">
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+      </div>
+    </div>
+    <div class="cube">
+      <div class="lifter">
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+      </div>
+    </div>
+    <div class="cube">
+      <div class="lifter">
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+        <div class="cube__face"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="shadow flatShadow dropShadow"> </div>
+  <script src="./jquery.min(1).js.download"></script>
+    <script id="rendered-js">
+//Open
+$('#colorWrapper').removeClass();
+$('#colorWrapper').addClass('gemBlue');
+
+//Generic
+$('.button').on("click", function () {
+  $('#colorWrapper').removeClass();
+});
+//Specific
+$('.whtSlate_B').on("click", function () {
+  $('#colorWrapper').addClass('whtSlate');
+});
+$('.honeyComb_B').on("click", function () {
+  $('#colorWrapper').addClass('honeyComb');
+});
+$('.phosGreen-II_B').on("click", function () {
+  $('#colorWrapper').addClass('phosGreen-II');
+});
+$('.gemBlue_B').on("click", function () {
+  $('#colorWrapper').addClass('gemBlue');
+});
+
+
+// COLOR Options [#top, #right, #left] top=bg
+/* 
+White Paper
+$c: #fff #a9a9a9 #dcdcdc;
+
+Dark Grey
+$c: #252525 #1a1a1a #222;
+
+Shadow
+$c: #101010 #191919 #999; // background-color: #0d0d0d; }
+
+Piano Keys
+$c: #101010 #e3e3e3 #999; // background-color: #0d0d0d; }
+
+Phosphorescent Green Machine
+$c: #0b1515 #102928 #15f4c2;
+$c: #0d1919 #102928 #15f4c2; (lighter top face) // background-color: #0b1515;
+//NU vvv
+$c: #0A1819 #102928 #15f4c2; // background-color: #0b1515;
+$cL: #0E2D2D;
+$BG: #0b1515;
+
+// NU Blue Gem
+$c: #101418 #333f80 #276EFF; 
+$cL: #1E2448;
+$BG: rgb(14, 12, 16);
+
+// Slate on White
+$c: #D0DAD9 #B9C6C7 #E4EDEC ; 
+$cL: #D0DAD9;
+$BG: rgb(250, 252, 251);
+
+// Honey-Comb
+$c: #FFF2D0 #FFD792  #FCB367 ; 
+$cL: #FFF8E4;
+$BG: rgb(250, 252, 251);
+
+*/
+
+
+//// Ink-Ripple onCLick <a> 
+var parent,ink,d,x,y,
+AnchorClick = $(".inkAnchor");
+
+AnchorClick.on('mousedown', function (e) {
+
+  parent = $(this); // OR $(this).parent(); if I contain the a, but a is already display block, so place .ink inside of a's box
+
+  //create .ink element if it doesn't exist
+  if (parent.find(".ink").length == 0)
+  parent.prepend("<span class='ink'></span>");
+
+  ink = parent.find(".ink");
+  //incase of quick double clicks stop the previous animation
+  ink.removeClass("animateInk");
+
+  //set size of .ink
+  if (!ink.height() && !ink.width())
+  {
+    //use parent's width or height whichever is larger for the diameter to make a circle which can cover the entire element.
+    // d = Math.max(parent.outerWidth(), parent.outerHeight());
+    // ink.css({height: d, width: d});
+    ink.css({ "height": '12em', "width": '12em' });
+  }
+
+  //get click coordinates
+  //logic = click coordinates relative to page - parent's position relative to page - half of self height/width to make it controllable from the center;
+  x = e.pageX - parent.offset().left - ink.width() / 2;
+  y = e.pageY - parent.offset().top - ink.height() / 2;
+
+  //set the position and add class .animate
+  ink.css({ top: y + 'px', left: x + 'px' }).addClass("animateInk");
+});
+//# sourceURL=pen.js
+  </script>
+
+  
+  <script src="./iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js.download"></script>
+
+
+
+</body></html>
