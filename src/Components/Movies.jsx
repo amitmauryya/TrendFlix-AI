@@ -46,7 +46,7 @@ const Movies = () => {
               loader={<h1>Loading....</h1>
              }
           >
-          <Card data={movie} title={category} />
+          <Card data={movie} title="movie" />
           </InfiniteScroll>
 
     </div>

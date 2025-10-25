@@ -45,7 +45,7 @@ const People = () => {
               loader={<h1>Loading....</h1>
              }
           >
-          <Card data={people} title={category} />
+          <Card data={people} title="person" />
           </InfiniteScroll>
 
     </div>
