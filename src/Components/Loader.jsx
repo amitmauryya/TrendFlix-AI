@@ -1,21 +1,11 @@
-import React, { useRef, useEffect } from 'react'
-import loader from "/loader.gif"
+import React from 'react'
+import Loading from '/loader1.gif'
 const Loader = () => {
-  const videoRef = useRef(null)
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 2  // 2x speed
-    }
-  }, [])
-
   return (
-    <div className='w-full h-full bg-black flex justify-center items-center'>
-      <img 
-        src={loader}
-        className='h-[50%]  object-contain'
-      />
+    <div className='flex w-screen  justify-center items-center'>
+      <img className='invert-[0.1] sepia-[2] saturate-[0.1] w-[50%]' src={Loading} alt="" />
     </div>
   )
 }
 
-export default Loader
+export default Loader;

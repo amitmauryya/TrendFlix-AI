@@ -32,10 +32,11 @@ function Topnav() {
       />
       {query.length > 0 && (
         <i
-          onClick={() => setquery("")}
-          className=" text-3xl  text-zinc-400 ri-close-fill"
+        onClick={() => setquery("")}
+        className=" text-3xl  text-zinc-400 ri-close-fill"
         ></i>
       )}
+      <Link to="/Aisearch" className=" ml-20 px-3 text-lg text-black rounded-3xl py-2 bg-[#ffffff]">AI Search <i className="text-zinc-800 ml-2 ri-robot-2-fill"></i></Link>
       <div className=" z-[100] absolute bg-zinc-200 w-[50%] max-h-[50vh] top-[100%] left-[17%] overflow-x-auto rounded">
         {search.map((elem, i) => (
           <Link to={`/${elem.media_type}/details/${elem.id}`}

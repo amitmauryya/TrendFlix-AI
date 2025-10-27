@@ -1,37 +1,37 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import axios from "../Utils/axios"; // 👈 same axios you already use
+import axios from "../Utils/axios"; 
 import HorizontalCards from "./templates/HorizontalCards";
-
 const Aisearch = () => {
   const navigate = useNavigate();
   const [searchValue, setsearchValue] = useState("");
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
+  console.log(searchValue);
 
   const handleGptSearchClick = async () => {
     try {
       setLoading(true);
 
       // Gemini API key
-      const genAI = new GoogleGenerativeAI("AIzaSyCSV0NdP8EkHjnB5D8E5YiZAanbixRPnag");
+      const genAI = new GoogleGenerativeAI("AIzaSyBzMDGgm0BPM7VnFxIs9Q1QDM3m3KgwLTo");
       const model = genAI.getGenerativeModel({ model: "models/gemini-2.5-flash" });
 
       // Gemini prompt
       const gptQuery = `
         You are a professional movie recommendation system.
         The user query is: "${searchValue}".
-        Respond ONLY with a valid JSON array of 5 movie names.
+        Respond ONLY with a valid JSON array of movie names.
         Example: ["Inception", "Titanic", "Avatar", "The Dark Knight", "Interstellar"]
       `;
 
       const result = await model.generateContent(gptQuery);
-      const movieString = await result.response.text();
+      const movieString = await result.response.text(); // ai ke output ko plain text(string) me convert kiya
 
       console.log("Raw Gemini Output:", movieString);
 
-      // extract clean array
+      //  clean array
       const match = movieString.match(/\[.*\]/s);
       if (!match) {
         console.error("No valid array found");
@@ -40,9 +40,9 @@ const Aisearch = () => {
       }
 
       const movieNames = JSON.parse(match[0]);
-      console.log("Movie Names:", movieNames);
+      // console.log("Movie Names:", movieNames);
 
-      // Fetch each movie from TMDB using your axios instance
+      // Fetch each movie from TMDB using your axios
       const tmdbResults = [];
       for (const name of movieNames) {
         const { data } = await axios.get(`/search/movie?query=${encodeURIComponent(name)}`);
@@ -50,7 +50,6 @@ const Aisearch = () => {
           tmdbResults.push(data.results[0]);
         }
       }
-
       setMovies(tmdbResults);
       setLoading(false);
     } catch (error) {
@@ -76,7 +75,7 @@ const Aisearch = () => {
         >
           <i className="ri-arrow-left-line"></i>
         </Link>
-        <h1>TrendFlix AI 🎬</h1>
+        <h1 className="text-white">TrendFlix AI 🎬</h1>
       </div>
 
       <div className="flex flex-col justify-center items-center mt-5">
@@ -96,9 +95,11 @@ const Aisearch = () => {
         </div>
 
         {loading ? (
-          <p className="text-white mt-5 text-xl">Loading recommendations...</p>
+          <p className="text-white mt-10 text-5xl">Loading recommendations...</p>
         ) : (
-          movies.length > 0 && <HorizontalCards data={movies} />
+          movies.length > 0 &&  <div className="mt-20 w-full">
+    <HorizontalCards data={movies}  />
+        </div>
         )}
       </div>
     </div>

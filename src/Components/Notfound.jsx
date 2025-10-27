@@ -7,7 +7,7 @@ const Notfound = () => {
        <Link onClick={() => navigate(-1)} className='text-xl absolute right-[2%] top-[9%] text-white rounded-full font-semibold mr-10 border-0 px-2 py-1 bg-[#6556CD]'>
                   <i className="ri-close-line"></i>
         </Link>
-       Trailer Nhi Hai Ji 😞 !
+       WRONG URL HAI BHAI 😞 !
     </div>
   )
 }

@@ -11,10 +11,13 @@ import Tvdetails from "./Components/templates/Tvdetails";
 import Peopledetails from "./Components/templates/Peopledetails";
 import Trailer from "./Components/templates/Trailer";
 import Notfound from "./Components/Notfound";
+import Aisearch from "./Components/Aisearch";
+import About from "./Components/About";
 const App = () => {
   return (
     <div className="flex bg-[#1F1E24] w-screen h-screen">
       <Routes>
+        <Route path="/about" element={<About/>}></Route>
         <Route path="/" element={<Home />}></Route>
         <Route path="/trending" element={<Trending />}></Route>
         <Route path="/popular" element={<Popular />}></Route>
@@ -29,6 +32,7 @@ const App = () => {
         <Route path="/persons" element={<People />}></Route>
         <Route path="/person/details/:id" element={<Peopledetails />}></Route>
         <Route path="*" element={<Notfound />} />
+        <Route path="/Aisearch" element={<Aisearch/>}></Route>
       </Routes>
     </div>
   );
